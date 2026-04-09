@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" data-next-head="">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="tri1">
+    <div class="tri2">
+      <audio id="triAudio" src="resources/media/marry-you.mp3" loop preload="auto"></audio>
+      <button id="playButton">Play Music</button>
+      <div class="tri3">
+        <div class="tri4">
+          SAVE THE DATE
+        </div>
+        <div class="tri5">
+          <img src="resources/images/image1.jpg" alt="">
+        </div>
+      </div>
+
+      <div class="tri6">
+        <img src="resources/images/decor1.png" alt="">
+      </div>
+
+      <div class="tri7">
+        <div class="tri8">
+          Nhà Trai
+        </div>
+        <div class="tri9">
+          <img src="resources/images/decor2.png" alt="">
+        </div>
+        <div class="tri10">
+          Nhà Gái
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const triAudio = document.getElementById('triAudio');
+    const playButton = document.getElementById('playButton');
+
+    playButton.addEventListener('click', function() {
+      triAudio.play().catch(error => {
+        console.log('Autoplay prevented:', error);
+      });
+      playButton.style.display = 'none';
+    });
+    </script>
+</body>
+</html>
