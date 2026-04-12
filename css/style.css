@@ -2,6 +2,16 @@ html,
 body {
   margin: 0;
   overflow-x: clip;
+  overflow-y: hidden;
+}
+
+* {
+  border: 0 solid #e5e7eb;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Import font quicksand */
@@ -9,6 +19,25 @@ body {
   font-family: 'Quicksand';
   src: url('../resources/fonts/quicksand.woff2') format('woff2'),
        url('../resources/fonts/quicksand.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Import font bucthu */
+@font-face {
+  font-family: 'BucThu';
+  src: url('../resources/fonts/bucthu.woff2') format('woff2'),
+       url('../resources/fonts/bucthu.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HoaTay1';
+  src: url('../resources/fonts/hoatay1.woff2') format('woff2'),
+       url('../resources/fonts/hoatay1.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -39,7 +68,8 @@ img, svg, video, canvas, audio, iframe, embed, object {
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 0px;
   border-radius: 3px;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .tri3 {
@@ -93,15 +123,29 @@ img, svg, video, canvas, audio, iframe, embed, object {
   margin: 0 auto 48px;
 }
 
-.tri7 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
-.tri9 {
+.tri9 img {
   width: 24px;
   height: 24px;
+}
+
+.tri15,
+.tri16 {
+  font-family: BucThu;
+  font-size: 28px;
+  color: #631717;
+  text-shadow: rgba(0, 0, 0, 0) 0px 0px 2px;
+}
+
+.tri18 {
+  /* border-top: 1px solid;
+  font-family: HoaTay1;
+  font-size: 32px;
+  text-shadow: rgba(0, 0, 0, 0) 0px 0px 2px; */
+}
+
+.tri19 {
+  border: 1px solid #631717;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 0px;
+  text-shadow: rgba(0, 0, 0, 0) 0px 0px 2px;
+  max-width: 108px;
 }
