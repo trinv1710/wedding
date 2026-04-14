@@ -1,3 +1,10 @@
+:root {
+  --tw-gradient-stops: var(--tw-gradient-from), #fce7f3 var(--tw-gradient-via-position), var(--tw-gradient-to);
+  --tw-gradient-from: #fef2f2 var(--tw-gradient-from-position);
+  --tw-gradient-to: #fff7ed var(--tw-gradient-to-position);
+  --tw-gradient-to-position: ;
+}
+
 html,
 body {
   margin: 0;
@@ -148,4 +155,13 @@ img, svg, video, canvas, audio, iframe, embed, object {
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 0px;
   text-shadow: rgba(0, 0, 0, 0) 0px 0px 2px;
   max-width: 108px;
+}
+
+.tri21 {
+  background-image: linear-gradient(to right bottom, rgb(254, 242, 242), rgb(252, 231, 243), rgb(255, 247, 237));
+  opacity: 0.6;
+}
+
+.tri22 {
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px;
 }
