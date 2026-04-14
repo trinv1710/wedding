@@ -6,10 +6,11 @@
   <title>Document</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
 </head>
 <body>
   <div class="tri1">
-    <div class="tri2">
+    <div class="tri2 bg-white">
       <audio id="triAudio" src="resources/media/marry-you.mp3" loop preload="auto"></audio>
       <button id="playButton">Play Music</button>
       <div class="tri3">
@@ -141,9 +142,9 @@
             </div>
             <div class="relative z-1">
               <div class="mb-8">
-                <h2>Cùng Đếm Ngược</h2>
+                <h2 class="font-great-vibes text-4xl mb-2 text-[#8f0404]">Cùng Đếm Ngược</h2>
 
-                <div>
+                <div class="font-dancing-script text-xl text-gray-700">
                   Đến ngày trọng đại của chúng mình
                 </div>
 
@@ -241,6 +242,7 @@
       });
       playButton.style.display = 'none';
     });
-    </script>
+  </script>
+  <script src="js/script.js"></script>
 </body>
 </html>
