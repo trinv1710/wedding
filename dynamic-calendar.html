@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Calendar</title>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background: #e8d5c4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    
+    .calendar-container {
+        max-width: 500px;
+        width: 100%;
+    }
+    
+    .controls {
+        text-align: center;
+        margin-bottom: 20px;
+        background: white;
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+    
+    .controls h3 {
+        margin: 0 0 10px 0;
+        font-size: 16px;
+        color: #6b3030;
+    }
+    
+    .controls input, .controls select {
+        padding: 8px 12px;
+        font-size: 14px;
+        margin: 3px;
+        border: 2px solid #8b4a4a;
+        border-radius: 6px;
+        width: calc(50% - 10px);
+    }
+    
+    .controls button {
+        padding: 8px 15px;
+        font-size: 14px;
+        background: #8b4a4a;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        margin: 3px;
+    }
+    
+    .controls button:hover {
+        background: #6b3030;
+    }
+    
+    .highlight-section {
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid #ddd;
+    }
+    
+    .highlight-section label {
+        font-size: 13px;
+        color: #6b3030;
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    .highlight-section input {
+        width: 100px;
+    }
+    
+    .calendar {
+        background: #f5ebe0;
+        border: 2px solid #8b4a4a;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    
+    .calendar-header {
+        background: #f5ebe0;
+        padding: 20px 15px;
+        text-align: center;
+        border-bottom: 2px solid #8b4a4a;
+    }
+    
+    .calendar-header h2 {
+        color: #6b3030;
+        font-size: 24px;
+        margin: 0;
+        font-weight: 600;
+    }
+    
+    .calendar-days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        background: #f5ebe0;
+        padding: 8px 15px;
+        gap: 5px;
+        border-bottom: 2px solid #d4a89a;
+    }
+    
+    .day-name {
+        color: #8b4a4a;
+        font-weight: bold;
+        text-align: center;
+        padding: 8px 5px;
+        font-size: 14px;
+    }
+    
+    .calendar-dates {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        padding: 15px;
+        gap: 8px;
+    }
+    
+    .date {
+        color: #8b4a4a;
+        text-align: center;
+        padding: 10px 5px;
+        font-size: 18px;
+        position: relative;
+        min-height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        transition: all 0.3s;
+    }
+    
+    .date:hover:not(.empty) {
+        background: rgba(139, 74, 74, 0.1);
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+    
+    .date.empty {
+        visibility: hidden;
+    }
+    
+    /* Highlight ngày đặc biệt */
+    .date.highlight {
+        position: relative;
+        font-weight: bold;
+    }
+    
+    .date.highlight::before {
+        content: "♥";
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #8b4a4a;
+        font-size: 28px;
+        animation: heartbeat 1.5s infinite;
+    }
+    
+    @keyframes heartbeat {
+        0%, 100% { transform: translateX(-50%) scale(1); }
+        50% { transform: translateX(-50%) scale(1.2); }
+    }
+    
+    /* Highlight ngày hôm nay */
+    .date.today {
+        background: rgba(139, 74, 74, 0.2);
+        border: 2px solid #8b4a4a;
+        font-weight: bold;
+    }
+    
+    /* Responsive cho mobile */
+    @media (max-width: 500px) {
+        body {
+            padding: 10px;
+        }
+        
+        .calendar-container {
+            max-width: 100%;
+        }
+        
+        .calendar-header h2 {
+            font-size: 20px;
+        }
+        
+        .date {
+            font-size: 16px;
+            padding: 8px 3px;
+            min-height: 40px;
+        }
+        
+        .date.highlight::before {
+            font-size: 24px;
+            top: -12px;
+        }
+        
+        .day-name {
+            font-size: 12px;
+            padding: 6px 3px;
+        }
+        
+        .controls input, .controls select {
+            width: 100%;
+            margin: 5px 0;
+        }
+        
+        .controls button {
+            width: 48%;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="calendar-container">
+    <div class="controls">
+        <h3>Chọn tháng và năm</h3>
+        <select id="monthSelect">
+            <option value="0">Tháng 1</option>
+            <option value="1">Tháng 2</option>
+            <option value="2">Tháng 3</option>
+            <option value="3">Tháng 4</option>
+            <option value="4">Tháng 5</option>
+            <option value="5">Tháng 6</option>
+            <option value="6">Tháng 7</option>
+            <option value="7">Tháng 8</option>
+            <option value="8">Tháng 9</option>
+            <option value="9">Tháng 10</option>
+            <option value="10">Tháng 11</option>
+            <option value="11">Tháng 12</option>
+        </select>
+        
+        <input type="number" id="yearInput" min="1900" max="2100" placeholder="Năm">
+        
+        <div style="margin-top: 8px;">
+            <button onclick="generateCalendar()">Tạo lịch</button>
+            <button onclick="goToToday()">Hôm nay</button>
+        </div>
+        
+        <div class="highlight-section">
+            <label>Nhấn mạnh ngày:</label>
+            <input type="number" id="highlightDay" min="1" max="31" placeholder="VD: 14">
+            <button onclick="updateHighlight()">Cập nhật</button>
+        </div>
+    </div>
+    
+    <div class="calendar">
+        <div class="calendar-header">
+            <h2 id="calendarTitle">Tháng 2 / 2026</h2>
+        </div>
+        
+        <div class="calendar-days">
+            <div class="day-name">T2</div>
+            <div class="day-name">T3</div>
+            <div class="day-name">T4</div>
+            <div class="day-name">T5</div>
+            <div class="day-name">T6</div>
+            <div class="day-name">T7</div>
+            <div class="day-name">CN</div>
+        </div>
+        
+        <div class="calendar-dates" id="calendarDates">
+            <!-- Ngày sẽ được generate bằng JavaScript -->
+        </div>
+    </div>
+</div>
+
+<script>
+let currentMonth = 1; // Tháng 2 (0-indexed)
+let currentYear = 2026;
+let highlightedDay = 1;
+
+// Khởi tạo khi load trang
+window.onload = function() {
+    const today = new Date();
+    currentMonth = today.getMonth();
+    currentYear = today.getFullYear();
+    
+    document.getElementById('monthSelect').value = currentMonth;
+    document.getElementById('yearInput').value = currentYear;
+    
+    generateCalendar();
+};
+
+function generateCalendar() {
+    // Lấy giá trị từ input
+    const monthSelect = document.getElementById('monthSelect');
+    const yearInput = document.getElementById('yearInput');
+    
+    currentMonth = parseInt(monthSelect.value);
+    currentYear = parseInt(yearInput.value) || new Date().getFullYear();
+    
+    // Cập nhật title
+    const monthNames = ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6',
+                        'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'];
+    
+    document.getElementById('calendarTitle').textContent = 
+        `${monthNames[currentMonth]} / ${currentYear}`;
+    
+    // Tính toán ngày tháng
+    const firstDay = new Date(currentYear, currentMonth, 1);
+    const lastDay = new Date(currentYear, currentMonth + 1, 0);
+    
+    const firstDayOfWeek = firstDay.getDay(); // 0 = CN, 1 = T2, ...
+    const totalDays = lastDay.getDate();
+    
+    // Điều chỉnh: T2 = 0, T3 = 1, ... CN = 6
+    const adjustedFirstDay = firstDayOfWeek === 0 ? 6 : firstDayOfWeek - 1;
+    
+    // Generate HTML
+    const calendarDates = document.getElementById('calendarDates');
+    calendarDates.innerHTML = '';
+    
+    // Thêm ô trống trước ngày 1
+    for (let i = 0; i < adjustedFirstDay; i++) {
+        const emptyDiv = document.createElement('div');
+        emptyDiv.className = 'date empty';
+        calendarDates.appendChild(emptyDiv);
+    }
+    
+    // Lấy ngày hôm nay
+    const today = new Date();
+    const isCurrentMonth = today.getMonth() === currentMonth && 
+                           today.getFullYear() === currentYear;
+    const todayDate = today.getDate();
+    
+    // Thêm các ngày trong tháng
+    for (let day = 1; day <= totalDays; day++) {
+        const dateDiv = document.createElement('div');
+        dateDiv.className = 'date';
+        dateDiv.textContent = day;
+        
+        // Highlight ngày được chọn
+        if (day === highlightedDay) {
+            dateDiv.classList.add('highlight');
+        }
+        
+        // Highlight ngày hôm nay
+        if (isCurrentMonth && day === todayDate) {
+            dateDiv.classList.add('today');
+        }
+        
+        // Thêm event click
+        dateDiv.onclick = function() {
+            highlightedDay = day;
+            document.getElementById('highlightDay').value = day;
+            updateHighlight();
+        };
+        
+        calendarDates.appendChild(dateDiv);
+    }
+}
+
+function updateHighlight() {
+    const dayInput = document.getElementById('highlightDay');
+    highlightedDay = parseInt(dayInput.value) || 1;
+    generateCalendar();
+}
+
+function goToToday() {
+    const today = new Date();
+    currentMonth = today.getMonth();
+    currentYear = today.getFullYear();
+    
+    document.getElementById('monthSelect').value = currentMonth;
+    document.getElementById('yearInput').value = currentYear;
+    
+    generateCalendar();
+}
+</script>
+
+</body>
+</html>

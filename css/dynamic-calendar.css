@@ -1,0 +1,196 @@
+.controls {
+  text-align: center;
+  margin-bottom: 20px;
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.controls h3 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  color: #6b3030;
+}
+
+.controls input, .controls select {
+  padding: 8px 12px;
+  font-size: 14px;
+  margin: 3px;
+  border: 2px solid #8b4a4a;
+  border-radius: 6px;
+  width: calc(50% - 10px);
+}
+
+.controls button {
+  padding: 8px 15px;
+  font-size: 14px;
+  background: #8b4a4a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 3px;
+}
+
+.controls button:hover {
+  background: #6b3030;
+}
+
+.highlight-section {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #ddd;
+}
+
+.highlight-section label {
+  font-size: 13px;
+  color: #6b3030;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.highlight-section input {
+  width: 100px;
+}
+
+.calendar {
+  background: #f5ebe0;
+  border: 2px solid #8b4a4a;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  width: 90%;
+  margin: 0 auto;
+}
+
+.calendar-header {
+  background: #f5ebe0;
+  padding: 20px 15px;
+  text-align: center;
+  border-bottom: 2px solid #8b4a4a;
+}
+
+.calendar-header h2 {
+  color: #6b3030;
+  font-size: 24px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: #f5ebe0;
+  padding: 8px 15px;
+  gap: 5px;
+  border-bottom: 2px solid #d4a89a;
+}
+
+.day-name {
+  color: #8b4a4a;
+  font-weight: bold;
+  text-align: center;
+  padding: 8px 5px;
+  font-size: 14px;
+}
+
+.calendar-dates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 15px;
+  gap: 8px;
+}
+
+.date {
+  color: #8b4a4a;
+  text-align: center;
+  padding: 10px 5px;
+  font-size: 18px;
+  position: relative;
+  min-height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+
+.date:hover:not(.empty) {
+  background: rgba(139, 74, 74, 0.1);
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.date.empty {
+  visibility: hidden;
+}
+
+/* Highlight ngày đặc biệt */
+.date.highlight {
+  position: relative;
+  font-weight: bold;
+}
+
+.date.highlight::before {
+  content: "♥";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #8b4a4a;
+  font-size: 28px;
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-50%) scale(1.2); }
+}
+
+/* Highlight ngày hôm nay */
+.date.today {
+  background: rgba(139, 74, 74, 0.2);
+  border: 2px solid #8b4a4a;
+  font-weight: bold;
+}
+
+/* Responsive cho mobile */
+@media (max-width: 500px) {
+  body {
+      padding: 10px;
+  }
+
+  .calendar-container {
+      max-width: 100%;
+  }
+
+  .calendar-header h2 {
+      font-size: 20px;
+  }
+
+  .date {
+      font-size: 16px;
+      padding: 8px 3px;
+      min-height: 40px;
+  }
+
+  .date.highlight::before {
+      font-size: 24px;
+      top: -12px;
+  }
+
+  .day-name {
+      font-size: 12px;
+      padding: 6px 3px;
+  }
+
+  .controls input, .controls select {
+      width: 100%;
+      margin: 5px 0;
+  }
+
+  .controls button {
+      width: 48%;
+  }
+}

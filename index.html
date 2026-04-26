@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" data-next-head="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    data-next-head="">
   <title>Document</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dynamic-calendar.css">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
 </head>
+
 <body>
   <div class="tri1">
     <div class="tri2 bg-white">
@@ -130,6 +134,24 @@
           Nhằm ngày: 22 tháng 04 năm Bính Ngọ
         </div>
 
+        <div class="calendar">
+          <div class="calendar-header">
+              <h2 id="calendarTitle">Tháng 6 / 2026</h2>
+          </div>
+
+          <div class="calendar-days">
+              <div class="day-name">T2</div>
+              <div class="day-name">T3</div>
+              <div class="day-name">T4</div>
+              <div class="day-name">T5</div>
+              <div class="day-name">T6</div>
+              <div class="day-name">T7</div>
+              <div class="day-name">CN</div>
+          </div>
+
+          <div class="calendar-dates" id="calendarDates"><div class="date">1</div><div class="date">2</div><div class="date">3</div><div class="date">4</div><div class="date">5</div><div class="date">6</div><div class="date highlight">7</div><div class="date">8</div><div class="date">9</div><div class="date">10</div><div class="date">11</div><div class="date">12</div><div class="date">13</div><div class="date">14</div><div class="date">15</div><div class="date">16</div><div class="date">17</div><div class="date">18</div><div class="date">19</div><div class="date">20</div><div class="date">21</div><div class="date">22</div><div class="date">23</div><div class="date">24</div><div class="date">25</div><div class="date">26</div><div class="date">27</div><div class="date">28</div><div class="date">29</div><div class="date">30</div></div>
+      </div>
+
         <div class="section countdown w-[90%] mx-auto">
           <div class="relative overflow-hidden tri22 bg-white p-8 rounded-3xl">
             <div class="tri21 absolute inset-0"></div>
@@ -188,6 +210,8 @@
                   </div>
                 </div>
               </div>
+
+
             </div>
 
           </div>
@@ -236,7 +260,7 @@
     const triAudio = document.getElementById('triAudio');
     const playButton = document.getElementById('playButton');
 
-    playButton.addEventListener('click', function() {
+    playButton.addEventListener('click', function () {
       triAudio.play().catch(error => {
         console.log('Autoplay prevented:', error);
       });
@@ -245,4 +269,5 @@
   </script>
   <script src="js/script.js"></script>
 </body>
+
 </html>
