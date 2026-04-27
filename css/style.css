@@ -3,6 +3,7 @@
   --tw-gradient-from: #fef2f2 var(--tw-gradient-from-position);
   --tw-gradient-to: #fff7ed var(--tw-gradient-to-position);
   --tw-gradient-to-position: ;
+  --color-primary: #631717;
 }
 
 html,
@@ -10,6 +11,7 @@ body {
   margin: 0;
   overflow-x: clip;
   overflow-y: hidden;
+  line-height: normal;
 }
 
 * {
@@ -132,6 +134,24 @@ body {
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+@font-face {
+  font-family: 'Gillastone';
+  src: url('../resources/fonts/gillastone.woff2') format('woff2'),
+       url('../resources/fonts/gillastone.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Scarlet Bradley.regular';
+  src: url('../resources/fonts/scarlet-bradleyregular.woff2') format('woff2'),
+       url('../resources/fonts/scarlet-bradleyregular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 img,
 video {
   max-width: 100%;
@@ -167,7 +187,7 @@ body {
 .tri3 {
   position: relative;
   height: 468px;
-  background: #631717;
+  background: var(--color-primary);
   padding: 16px;
   margin-bottom: 80px;
 }
@@ -224,7 +244,7 @@ body {
 .tri16 {
   font-family: BucThu;
   font-size: 28px;
-  color: #631717;
+  color: var(--color-primary);
   text-shadow: rgba(0, 0, 0, 0) 0px 0px 2px;
 }
 
@@ -236,7 +256,7 @@ body {
 }
 
 .tri19 {
-  border: 1px solid #631717;
+  border: 1px solid var(--color-primary);
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 0px;
   text-shadow: rgba(0, 0, 0, 0) 0px 0px 2px;
   max-width: 108px;
@@ -257,4 +277,65 @@ body {
 
 .font-dancing-script {
   font-family: 'Dancing Script';
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse{50%{opacity:.5}}
+
+.time-unit {
+  background: var(--color-primary);
+  display: flex;
+  gap: 5px;
+  padding: 12px;
+}
+
+.countdown-display {
+  font-size: 12px;
+}
+
+.font-dancing {
+  width: 16px;
+  text-align: right;
+}
+
+.tri30 {
+  width: 100%;
+  height: 156px;
+  background-color: #470a0a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tri31 {
+  font-size: 38px;
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0);
+  font-weight: 500;
+  font-family: "Gillastone";
+  color: #fff;
+  max-width: 330px;
+  text-align: center;
+}
+
+.tri34 {
+  font-size: 24px;
+  text-shadow: rgba(0, 0, 0, 0) 0px 0px 2px;
+  font-weight: 500;
+  font-family: "Scarlet Bradley.regular";
+  position: absolute;
+}
+
+.tri32 {
+  left: -10px;
+  top: 24px;
+  transform: rotate(90deg);
+}
+
+.tri33 {
+  top: 24px;
+  right: -10px;
+  transform: rotate(-90deg);
 }

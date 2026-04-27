@@ -61,7 +61,7 @@
   overflow: hidden;
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
   width: 90%;
-  margin: 0 auto;
+  margin: 0 auto 16px;
 }
 
 .calendar-header {
