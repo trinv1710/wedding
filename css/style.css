@@ -16,6 +16,11 @@ body {
 
 * {
   border: 0 solid #e5e7eb;
+  font-family: Baskerville, "Times New Roman", serif;
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
 }
 
 /* body {
@@ -152,6 +157,28 @@ body {
   font-display: swap;
 }
 
+@font-face {
+  font-family: "UNI Chu truyen thong";
+  src: url("../resources/fonts/UNI_Chu_truyen_thong.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ephesis-Regular.ttf";
+  src: url("../resources/fonts/octet-stream.ttf") format("truetype");
+  font-display: swap;
+}
+
+.font-ephesis {
+  font-family: 'Ephesis-Regular.ttf', sans-serif;
+}
+
+.font-smooth {
+  -webkit-font-smoothing: antialiased;
+}
+
 img,
 video {
   max-width: 100%;
@@ -182,6 +209,10 @@ body {
   border-radius: 3px;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+.color-primary {
+  color: var(--color-primary);
 }
 
 .tri3 {
@@ -243,6 +274,8 @@ body {
 .tri15,
 .tri16 {
   font-family: BucThu;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-size: 28px;
   color: var(--color-primary);
   text-shadow: rgba(0, 0, 0, 0) 0px 0px 2px;
@@ -277,6 +310,14 @@ body {
 
 .font-dancing-script {
   font-family: 'Dancing Script';
+}
+
+.font-playfair-display {
+  font-family: 'Playfair Display';
+}
+
+.font-uni-chu {
+  font-family: "UNI Chu truyen thong", "Times New Roman", serif;
 }
 
 .animate-pulse {
@@ -338,4 +379,19 @@ body {
   top: 24px;
   right: -10px;
   transform: rotate(-90deg);
+}
+
+.tri35 {
+  font-size: 36px;
+  color: var(--color-primary);
+}
+
+.tri36 {
+  font-size: 14px;
+}
+
+.tri37 {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
 }

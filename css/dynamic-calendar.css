@@ -157,10 +157,6 @@
 
 /* Responsive cho mobile */
 @media (max-width: 500px) {
-  body {
-      padding: 10px;
-  }
-
   .calendar-container {
       max-width: 100%;
   }
