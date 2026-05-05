@@ -19,7 +19,16 @@
   <div class="tri1">
     <div class="tri2 bg-white">
       <audio id="triAudio" src="resources/media/marry-you.mp3" loop preload="auto"></audio>
-      <button id="playButton">Play Music</button>
+
+      <!-- Splash Screen -->
+      <div id="splashScreen" class="splash-screen">
+        <div class="splash-content">
+          <div class="splash-icon">💌</div>
+          <div class="splash-title">Wedding Invitation</div>
+          <div class="splash-names">Văn Trí & Mỹ Lê</div>
+          <div class="splash-cta">Nhấn để mở thiệp</div>
+        </div>
+      </div>
       <div class="tri3">
         <div class="tri4">
           SAVE THE DATE
@@ -333,14 +342,20 @@
   </div>
 
   <script>
-    const triAudio = document.getElementById('triAudio');
-    const playButton = document.getElementById('playButton');
+    document.addEventListener('DOMContentLoaded', function () {
+      const triAudio = document.getElementById('triAudio');
+      const splashScreen = document.getElementById('splashScreen');
 
-    playButton.addEventListener('click', function () {
-      triAudio.play().catch(error => {
-        console.log('Autoplay prevented:', error);
+      splashScreen.addEventListener('click', function () {
+        // Fade out splash screen
+        splashScreen.classList.add('splash-hide');
+        setTimeout(function () {
+          splashScreen.style.display = 'none';
+        }, 800);
+
+        // Play music
+        triAudio.play();
       });
-      playButton.style.display = 'none';
     });
   </script>
   <script src="js/script.js"></script>
