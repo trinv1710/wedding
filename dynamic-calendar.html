@@ -26,22 +26,22 @@
     
     .controls {
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         background: white;
-        padding: 15px;
+        padding: 12px;
         border-radius: 12px;
         box-shadow: 0 3px 6px rgba(0,0,0,0.1);
     }
     
     .controls h3 {
-        margin: 0 0 10px 0;
-        font-size: 16px;
+        margin: 0 0 8px 0;
+        font-size: 15px;
         color: #6b3030;
     }
     
     .controls input, .controls select {
-        padding: 8px 12px;
-        font-size: 14px;
+        padding: 6px 10px;
+        font-size: 13px;
         margin: 3px;
         border: 2px solid #8b4a4a;
         border-radius: 6px;
@@ -49,8 +49,8 @@
     }
     
     .controls button {
-        padding: 8px 15px;
-        font-size: 14px;
+        padding: 6px 12px;
+        font-size: 13px;
         background: #8b4a4a;
         color: white;
         border: none;
@@ -64,16 +64,16 @@
     }
     
     .highlight-section {
-        margin-top: 12px;
-        padding-top: 12px;
+        margin-top: 10px;
+        padding-top: 10px;
         border-top: 1px solid #ddd;
     }
     
     .highlight-section label {
-        font-size: 13px;
+        font-size: 12px;
         color: #6b3030;
         display: block;
-        margin-bottom: 5px;
+        margin-bottom: 4px;
     }
     
     .highlight-section input {
@@ -90,14 +90,14 @@
     
     .calendar-header {
         background: #f5ebe0;
-        padding: 20px 15px;
+        padding: 12px 15px;
         text-align: center;
         border-bottom: 2px solid #8b4a4a;
     }
     
     .calendar-header h2 {
         color: #6b3030;
-        font-size: 24px;
+        font-size: 22px;
         margin: 0;
         font-weight: 600;
     }
@@ -106,8 +106,8 @@
         display: grid;
         grid-template-columns: repeat(7, 1fr);
         background: #f5ebe0;
-        padding: 8px 15px;
-        gap: 5px;
+        padding: 6px 12px;
+        gap: 4px;
         border-bottom: 2px solid #d4a89a;
     }
     
@@ -115,24 +115,24 @@
         color: #8b4a4a;
         font-weight: bold;
         text-align: center;
-        padding: 8px 5px;
-        font-size: 14px;
+        padding: 5px 3px;
+        font-size: 13px;
     }
     
     .calendar-dates {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
-        padding: 15px;
-        gap: 8px;
+        padding: 12px;
+        gap: 6px;
     }
     
     .date {
         color: #8b4a4a;
         text-align: center;
-        padding: 10px 5px;
-        font-size: 18px;
+        padding: 8px 4px;
+        font-size: 16px;
         position: relative;
-        min-height: 45px;
+        min-height: 38px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -159,11 +159,11 @@
     .date.highlight::before {
         content: "♥";
         position: absolute;
-        top: -15px;
+        top: -12px;
         left: 50%;
         transform: translateX(-50%);
         color: #8b4a4a;
-        font-size: 28px;
+        font-size: 24px;
         animation: heartbeat 1.5s infinite;
     }
     
@@ -189,24 +189,33 @@
             max-width: 100%;
         }
         
+        .calendar-header {
+            padding: 10px 12px;
+        }
+        
         .calendar-header h2 {
-            font-size: 20px;
+            font-size: 18px;
         }
         
         .date {
-            font-size: 16px;
-            padding: 8px 3px;
-            min-height: 40px;
+            font-size: 14px;
+            padding: 6px 2px;
+            min-height: 32px;
         }
         
         .date.highlight::before {
-            font-size: 24px;
-            top: -12px;
+            font-size: 20px;
+            top: -10px;
         }
         
         .day-name {
-            font-size: 12px;
-            padding: 6px 3px;
+            font-size: 11px;
+            padding: 4px 2px;
+        }
+        
+        .calendar-dates {
+            padding: 10px;
+            gap: 5px;
         }
         
         .controls input, .controls select {
@@ -242,7 +251,7 @@
         
         <input type="number" id="yearInput" min="1900" max="2100" placeholder="Năm">
         
-        <div style="margin-top: 8px;">
+        <div style="margin-top: 6px;">
             <button onclick="generateCalendar()">Tạo lịch</button>
             <button onclick="goToToday()">Hôm nay</button>
         </div>

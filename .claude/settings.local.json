@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /Users/tri.nguyen/Project/honda-powersports-redesign-11-2023-new/honda-powersports-redesign-11-2023 branch)",
+      "Bash(git -C /Users/tri.nguyen/Project/honda-powersports-redesign-11-2023-new branch)"
+    ]
+  }
+}

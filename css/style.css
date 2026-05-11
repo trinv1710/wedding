@@ -1,3 +1,8 @@
+/* Will delete */
+#splashScreen {
+  display: none;
+}
+
 :root {
   --tw-gradient-stops: var(--tw-gradient-from), #fce7f3 var(--tw-gradient-via-position), var(--tw-gradient-to);
   --tw-gradient-from: #fef2f2 var(--tw-gradient-from-position);
@@ -15,13 +20,17 @@ body {
 }
 
 * {
-  border: 0 solid #e5e7eb;
   font-family: Baskerville, "Times New Roman", serif;
 }
 
 .bg-primary {
   background-color: var(--color-primary);
 }
+
+.text-primary {
+  color: var(--color-primary);
+}
+
 
 /* body {
   -webkit-font-smoothing: antialiased;

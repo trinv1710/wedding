@@ -66,7 +66,7 @@
 
 .calendar-header {
   background: #f5ebe0;
-  padding: 20px 15px;
+  padding: 16px 15px;
   text-align: center;
   border-bottom: 2px solid #8b4a4a;
 }
@@ -106,9 +106,7 @@
   color: #8b4a4a;
   text-align: center;
   padding: 10px 5px;
-  font-size: 18px;
   position: relative;
-  min-height: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -132,20 +130,23 @@
   font-weight: bold;
 }
 
-.date.highlight::before {
-  content: "♥";
-  position: absolute;
-  top: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #8b4a4a;
-  font-size: 28px;
-  animation: heartbeat 1.5s infinite;
+@keyframes heartbeat {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.25); }
 }
 
-@keyframes heartbeat {
-  0%, 100% { transform: translateX(-50%) scale(1); }
-  50% { transform: translateX(-50%) scale(1.2); }
+.heart-date {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: heartbeat 1.5s ease-in-out infinite;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 /* Highlight ngày hôm nay */
@@ -168,7 +169,6 @@
   .date {
       font-size: 16px;
       padding: 8px 3px;
-      min-height: 40px;
   }
 
   .date.highlight::before {
