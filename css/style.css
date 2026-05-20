@@ -298,10 +298,11 @@ body {
 }
 
 .tri19 {
+  height: fit-content;
   border: 1px solid var(--color-primary);
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 0px;
   text-shadow: rgba(0, 0, 0, 0) 0px 0px 2px;
-  max-width: 108px;
+  max-width: 124px;
 }
 
 .tri21 {
