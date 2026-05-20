@@ -2,7 +2,6 @@
 
 [data-animate] {
   opacity: 0;
-  transform: translateY(100px);
   will-change: opacity, transform;
   transition:
     opacity 1s cubic-bezier(0.41, 0.01, 0.02, 0.95),
@@ -14,6 +13,7 @@
 [data-animate="left"]  { transform: translateX(-100px); }
 [data-animate="right"] { transform: translateX(100px); }
 [data-animate="down"]  { transform: translateY(-100px); }
+[data-animate="up"]  { transform: translateY(100px); }
 [data-animate="fade"]  { transform: none; }
 
 /* Revealed state */

@@ -572,3 +572,15 @@ body {
 .ab-slp .album-item:not(.album-portrait) {
   aspect-ratio: 4 / 3;
 }
+
+.tri38 {
+  width: 128px;
+  height: 114px;
+  position: absolute;
+  left: -24px;
+}
+
+.tri38 img {
+  object-fit: cover;
+  transform: rotate(90deg);
+}
