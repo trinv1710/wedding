@@ -1,6 +1,6 @@
 /* Will delete */
 #splashScreen {
-  display: none;
+  /* display: none; */
 }
 
 :root {
@@ -573,14 +573,26 @@ body {
   aspect-ratio: 4 / 3;
 }
 
-.tri38 {
+.tri38,
+.tri39 {
+  position: absolute;
   width: 128px;
   height: 114px;
-  position: absolute;
+}
+
+.tri38 img,
+.tri39 img {
+  object-fit: cover;
+}
+
+.tri38 {
   left: -24px;
 }
 
 .tri38 img {
-  object-fit: cover;
   transform: rotate(90deg);
+}
+
+.tri39 {
+  right: -24px;
 }
