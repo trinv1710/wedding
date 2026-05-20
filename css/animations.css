@@ -2,22 +2,26 @@
 
 [data-animate] {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(100px);
   will-change: opacity, transform;
   transition:
-    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-  transition-delay: var(--anim-delay, 0ms);
+    opacity 1s cubic-bezier(0.41, 0.01, 0.02, 0.95),
+    transform 1s cubic-bezier(0.41, 0.01, 0.02, 0.95);
+    transition-delay: .1s;
 }
 
 /* Direction variants */
-[data-animate="left"]  { transform: translateX(-30px); }
-[data-animate="right"] { transform: translateX(30px); }
-[data-animate="down"]  { transform: translateY(-30px); }
+[data-animate="left"]  { transform: translateX(-100px); }
+[data-animate="right"] { transform: translateX(100px); }
+[data-animate="down"]  { transform: translateY(-100px); }
 [data-animate="fade"]  { transform: none; }
 
 /* Revealed state */
 [data-animate].in-view {
   opacity: 1;
   transform: none;
+}
+
+.animate-parent {
+  overflow: hidden;
 }

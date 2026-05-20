@@ -1,6 +1,6 @@
 // Countdown function
 function updateCountdown() {
-  const targetDate = new Date('2026-06-13T00:00:00').getTime();
+  const targetDate = new Date('2026-06-07T00:00:00').getTime();
   const now = new Date().getTime();
   const timeRemaining = targetDate - now;
 
