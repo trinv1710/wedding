@@ -3,11 +3,12 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta id="viewport-meta" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-    data-next-head="">
+  <meta id="viewport-meta" name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" data-next-head="">
   <script>
     (function () {
       var DESIGN_WIDTH = 500;
+
       function fit() {
         var w = window.screen.width || document.documentElement.clientWidth;
         var scale = Math.min(1, w / DESIGN_WIDTH);
@@ -25,7 +26,9 @@
   <title>Document</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/dynamic-calendar.css">
@@ -34,54 +37,54 @@
 </head>
 
 <body>
+  <!-- Splash Screen -->
+  <div id="splashScreen" class="splash-screen">
+    <div class="splash-card">
+      <div class="splash-corner splash-corner--tl"></div>
+      <div class="splash-corner splash-corner--tr"></div>
+      <div class="splash-corner splash-corner--bl"></div>
+      <div class="splash-corner splash-corner--br"></div>
+
+      <div class="splash-decor splash-decor--top">
+        <img src="resources/images/decor1.png" alt="">
+      </div>
+
+      <div class="splash-title">Wedding Invitation</div>
+
+      <div class="splash-names">
+        <span class="font-uni-chu">Văn Trí</span>
+        <span class="splash-amp">&amp;</span>
+        <span class="font-uni-chu">Mỹ Lê</span>
+      </div>
+
+      <div class="splash-divider">
+        <span class="splash-divider__line"></span>
+        <span class="splash-divider__dot"></span>
+        <span class="splash-divider__line"></span>
+      </div>
+
+      <div class="splash-dates">
+        <div class="splash-date">
+          <div class="splash-date__label">Lễ thành hôn</div>
+          <div class="splash-date__value">13 · 06 · 2026</div>
+        </div>
+        <div class="splash-date">
+          <div class="splash-date__label">Tiệc mừng</div>
+          <div class="splash-date__value">07 · 06 · 2026</div>
+        </div>
+      </div>
+
+      <div class="splash-greeting">Trân trọng kính mời</div>
+      <div id="splash-guest" class="splash-guest">Bạn cùng gia đình</div>
+      <div class="splash-attend">đến dự buổi tiệc chung vui cùng gia đình</div>
+
+      <button type="button" class="splash-cta">Mở thiệp mời</button>
+    </div>
+  </div>
   <div class="tri1">
     <div class="tri2 bg-white">
       <audio id="triAudio" src="resources/media/marry-you.mp3" loop preload="auto"></audio>
 
-      <!-- Splash Screen -->
-      <div id="splashScreen" class="splash-screen">
-        <div class="splash-card">
-          <div class="splash-corner splash-corner--tl"></div>
-          <div class="splash-corner splash-corner--tr"></div>
-          <div class="splash-corner splash-corner--bl"></div>
-          <div class="splash-corner splash-corner--br"></div>
-
-          <div class="splash-decor splash-decor--top">
-            <img src="resources/images/decor1.png" alt="">
-          </div>
-
-          <div class="splash-title">Wedding Invitation</div>
-
-          <div class="splash-names">
-            <span class="font-uni-chu">Văn Trí</span>
-            <span class="splash-amp">&amp;</span>
-            <span class="font-uni-chu">Mỹ Lê</span>
-          </div>
-
-          <div class="splash-divider">
-            <span class="splash-divider__line"></span>
-            <span class="splash-divider__dot"></span>
-            <span class="splash-divider__line"></span>
-          </div>
-
-          <div class="splash-dates">
-            <div class="splash-date">
-              <div class="splash-date__label">Lễ thành hôn</div>
-              <div class="splash-date__value">13 · 06 · 2026</div>
-            </div>
-            <div class="splash-date">
-              <div class="splash-date__label">Tiệc mừng</div>
-              <div class="splash-date__value">07 · 06 · 2026</div>
-            </div>
-          </div>
-
-          <div class="splash-greeting">Trân trọng kính mời</div>
-          <div id="splash-guest" class="splash-guest">Bạn cùng gia đình</div>
-          <div class="splash-attend">đến dự buổi tiệc chung vui cùng gia đình</div>
-
-          <button type="button" class="splash-cta">Mở thiệp mời</button>
-        </div>
-      </div>
       <div class="tri3 text-white">
         <div class="tri4">
           SAVE THE DATE
@@ -147,7 +150,7 @@
             </div>
             <div class="tri13 w-[45%]">
               <div>Ông: Nguyễn Văn Cư</div>
-              <div>>Bà: Trần Thị Lang</div>
+              <div>Bà: Trần Thị Lang</div>
             </div>
           </div>
         </div>
@@ -193,13 +196,13 @@
             </div>
           </div>
           <div class="flex flex-col items-center gap-2">
-              <span class="tracking-[0.05em]">LỄ
+            <span class="tracking-[0.05em]">LỄ
               THÀNH HÔN ĐƯỢC CỬ HÀNH TẠI
               TƯ GIA</span>
-              <p class="font-normal text-[16px] md:text-[18px] mb-2 uppercase">VÀO LÚC</p>
+            <p class="font-normal text-[16px] md:text-[18px] mb-2 uppercase">VÀO LÚC</p>
           </div>
-          <div class="text-[20px] md:text-[30px]"
-              style="font-family: Baskerville, &quot;Times New Roman&quot;, serif;">08:00</div>
+          <div class="text-[20px] md:text-[30px]" style="font-family: Baskerville, &quot;Times New Roman&quot;, serif;">
+            08:00</div>
           <div class="flex items-center gap-6">
             <span class="text-[12px] md:text-[16px]"
               style="font-family: Baskerville, &quot;Times New Roman&quot;, serif; text-align: right;">
@@ -209,20 +212,22 @@
             <!-- divider -->
             <span class="bg-black h-6 md:h-8 w-[2px]"></span>
 
-            <span class="text-[30px] md:text-[40px]" style="font-family: Baskerville, &quot;Times New Roman&quot;, serif;">13</span>
+            <span class="text-[30px] md:text-[40px]"
+              style="font-family: Baskerville, &quot;Times New Roman&quot;, serif;">13</span>
 
             <!-- divider -->
             <span class="bg-black h-6 md:h-8 w-[2px]"></span>
 
-            <span class="text-[12px] md:text-[16px]" style="font-family: Baskerville, &quot;Times New Roman&quot;, serif; text-align: left;">
+            <span class="text-[12px] md:text-[16px]"
+              style="font-family: Baskerville, &quot;Times New Roman&quot;, serif; text-align: left;">
               <span>THÁNG 06</span>
             </span>
           </div>
-          <div class="text-[18px] md:text-[24px]"
-              style="font-family: Baskerville, &quot;Times New Roman&quot;, serif;">2026</div>
+          <div class="text-[18px] md:text-[24px]" style="font-family: Baskerville, &quot;Times New Roman&quot;, serif;">
+            2026</div>
           <div class="uppercase tracking-[0.25em]"
-              style="font-family: Baskerville, &quot;Times New Roman&quot;, serif;">(Tức ngày 28/04 năm
-              Bính Ngọ)
+            style="font-family: Baskerville, &quot;Times New Roman&quot;, serif;">(Tức ngày 28/04 năm
+            Bính Ngọ)
           </div>
         </div>
 
@@ -259,10 +264,10 @@
         <div class="relative flex flex-col items-center gap-4 md:gap-5 text-center mb-10"
           style="font-family: Baskerville, &quot;Times New Roman&quot;, serif;">
           <div class="flex flex-col items-center gap-2">
-              <p class="font-normal text-[16px] md:text-[18px] mb-2 uppercase">VÀO LÚC</p>
+            <p class="font-normal text-[16px] md:text-[18px] mb-2 uppercase">VÀO LÚC</p>
           </div>
-          <div class="text-[20px] md:text-[30px]"
-              style="font-family: Baskerville, &quot;Times New Roman&quot;, serif;">11:00</div>
+          <div class="text-[20px] md:text-[30px]" style="font-family: Baskerville, &quot;Times New Roman&quot;, serif;">
+            11:00</div>
           <div class="flex items-center gap-6">
             <span class="text-[12px] md:text-[16px]"
               style="font-family: Baskerville, &quot;Times New Roman&quot;, serif; text-align: right;">
@@ -272,20 +277,22 @@
             <!-- divider -->
             <span class="bg-black h-6 md:h-8 w-[2px]"></span>
 
-            <span class="text-[30px] md:text-[40px]" style="font-family: Baskerville, &quot;Times New Roman&quot;, serif;">07</span>
+            <span class="text-[30px] md:text-[40px]"
+              style="font-family: Baskerville, &quot;Times New Roman&quot;, serif;">07</span>
 
             <!-- divider -->
             <span class="bg-black h-6 md:h-8 w-[2px]"></span>
 
-            <span class="text-[12px] md:text-[16px]" style="font-family: Baskerville, &quot;Times New Roman&quot;, serif; text-align: left;">
+            <span class="text-[12px] md:text-[16px]"
+              style="font-family: Baskerville, &quot;Times New Roman&quot;, serif; text-align: left;">
               <span>THÁNG 06</span>
             </span>
           </div>
-          <div class="text-[18px] md:text-[24px]"
-              style="font-family: Baskerville, &quot;Times New Roman&quot;, serif;">2026</div>
+          <div class="text-[18px] md:text-[24px]" style="font-family: Baskerville, &quot;Times New Roman&quot;, serif;">
+            2026</div>
           <div class="uppercase tracking-[0.25em]"
-              style="font-family: Baskerville, &quot;Times New Roman&quot;, serif;">(Tức ngày 22/04 năm
-              Bính Ngọ)
+            style="font-family: Baskerville, &quot;Times New Roman&quot;, serif;">(Tức ngày 22/04 năm
+            Bính Ngọ)
           </div>
         </div>
 
@@ -340,9 +347,11 @@
             <div class="date">30</div>
           </div>
         </div>
-        <div class="location w-[90%] mx-auto pt-8 pb-10 wow animate__fadeInUp relative" data-moveable="true" data-hidable="true" data-uuid="69e043d058f77">
+        <div class="location w-[90%] mx-auto pt-8 pb-10 wow animate__fadeInUp relative" data-moveable="true"
+          data-hidable="true" data-uuid="69e043d058f77">
           <!-- Google Maps Location -->
-          <div class="location-map relative bg-white rounded-3xl p-4 shadow-md overflow-hidden" data-uuid="69e043d058f82">
+          <div class="location-map relative bg-white rounded-3xl p-4 shadow-md overflow-hidden"
+            data-uuid="69e043d058f82">
             <!-- Decorative background pattern (like calendar) -->
             <div class="absolute inset-0 opacity-5 pointer-events-none" data-uuid="69e043d058f8d">
               <div class="absolute top-0 left-0 w-full h-full" style="background-image: repeating-linear-gradient(
@@ -361,10 +370,18 @@
                     );" data-uuid="69e043d058f98"></div>
             </div>
             <!-- Elegant corner decorations -->
-            <div class="absolute top-0 left-0 w-32 h-32 border-t-2 border-l-2 border-red-200 border-solid rounded-tl-3xl" data-uuid="69e043d058fa3"></div>
-            <div class="absolute top-0 right-0 w-32 h-32 border-t-2 border-r-2 border-red-200 border-solid rounded-tr-3xl" data-uuid="69e043d058fae"></div>
-            <div class="absolute bottom-0 left-0 w-32 h-32 border-b-2 border-l-2 border-red-200 border-solid rounded-bl-3xl" data-uuid="69e043d058fb9"></div>
-            <div class="absolute bottom-0 right-0 w-32 h-32 border-b-2 border-r-2 border-red-200 border-solid rounded-br-3xl" data-uuid="69e043d058fc4"></div>
+            <div
+              class="absolute top-0 left-0 w-32 h-32 border-t-2 border-l-2 border-red-200 border-solid rounded-tl-3xl"
+              data-uuid="69e043d058fa3"></div>
+            <div
+              class="absolute top-0 right-0 w-32 h-32 border-t-2 border-r-2 border-red-200 border-solid rounded-tr-3xl"
+              data-uuid="69e043d058fae"></div>
+            <div
+              class="absolute bottom-0 left-0 w-32 h-32 border-b-2 border-l-2 border-red-200 border-solid rounded-bl-3xl"
+              data-uuid="69e043d058fb9"></div>
+            <div
+              class="absolute bottom-0 right-0 w-32 h-32 border-b-2 border-r-2 border-red-200 border-solid rounded-br-3xl"
+              data-uuid="69e043d058fc4"></div>
             <div class="z-10" data-uuid="69e043d058fcf">
               <!-- Header -->
               <div class="text-center mb-8" data-uuid="69e043d058fda">
@@ -379,19 +396,29 @@
                   Nhà Hàng <span class="text-primary font-great-vibes text-[20px]">Thiên Phúc</span>
                 </div>
                 <div>
-                  <span class="text-primary font-great-vibes text-[20px]">Sảnh 1</span>, Tổ DP Phú Thọ 2, P. Đông Ninh Hòa, Khánh Hòa
+                  <span class="text-primary font-great-vibes text-[20px]">Sảnh 1</span>, Tổ DP Phú Thọ 2, P. Đông Ninh
+                  Hòa, Khánh Hòa
                 </div>
               </div>
 
               <!-- Action Button -->
               <div class="text-center mb-6" data-uuid="69e043d059008">
-                <a href="https://maps.app.goo.gl/Pv7eE4QFozKzqCmw8" target="_blank" rel="noopener noreferrer" class="vs-popup-gmaps btn-pulse group inline-flex items-center gap-3 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-semibold px-4 py-3 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out" data-uuid="69e043d059013">
-                  <svg class="w-6 h-6 group-hover:animate-bounce" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" data-uuid="69e043d059020">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" data-uuid="69e043d05902c"></path>
+                <a href="https://maps.app.goo.gl/Pv7eE4QFozKzqCmw8" target="_blank" rel="noopener noreferrer"
+                  class="vs-popup-gmaps btn-pulse group inline-flex items-center gap-3 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-semibold px-4 py-3 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out"
+                  data-uuid="69e043d059013">
+                  <svg class="w-6 h-6 group-hover:animate-bounce" fill="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg" data-uuid="69e043d059020">
+                    <path
+                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                      data-uuid="69e043d05902c"></path>
                   </svg>
                   <span class="text-lg" data-uuid="69e043d059037">Mở trong Google Maps</span>
-                  <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" data-uuid="69e043d059043">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" data-uuid="69e043d05904f"></path>
+                  <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                    data-uuid="69e043d059043">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      data-uuid="69e043d05904f"></path>
                   </svg>
                 </a>
               </div>
@@ -417,15 +444,58 @@
 
           <!-- 1. Full width -->
           <div class="ab-full animate-parent">
-            <div class="" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy" class="w-full max-h-[710px] object-cover"></div>
+            <div class="" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"
+                class="w-full max-h-[710px] object-cover"></div>
           </div>
 
           <div class="flex gap-4">
             <div class="mt-15">
               <div class="heart-svg flex gap-5 justify-end mb-4">
-                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297" xmlns:xlink="http://www.w3.org/1999/xlink"><style>#svg-Y-Om9xs0KE svg path { fill: #a92323; }</style><defs><style type="text/css"></style></defs><path d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z" fill="#999999" p-id="1298"></path></svg>
-                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297" xmlns:xlink="http://www.w3.org/1999/xlink"><style>#svg-Y-Om9xs0KE svg path { fill: #a92323; }</style><defs><style type="text/css"></style></defs><path d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z" fill="#999999" p-id="1298"></path></svg>
-                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297" xmlns:xlink="http://www.w3.org/1999/xlink"><style>#svg-Y-Om9xs0KE svg path { fill: #a92323; }</style><defs><style type="text/css"></style></defs><path d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z" fill="#999999" p-id="1298"></path></svg>
+                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon"
+                  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <style>
+                    #svg-Y-Om9xs0KE svg path {
+                      fill: #a92323;
+                    }
+                  </style>
+                  <defs>
+                    <style type="text/css"></style>
+                  </defs>
+                  <path
+                    d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z"
+                    fill="#999999" p-id="1298"></path>
+                </svg>
+                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon"
+                  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <style>
+                    #svg-Y-Om9xs0KE svg path {
+                      fill: #a92323;
+                    }
+                  </style>
+                  <defs>
+                    <style type="text/css"></style>
+                  </defs>
+                  <path
+                    d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z"
+                    fill="#999999" p-id="1298"></path>
+                </svg>
+                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon"
+                  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <style>
+                    #svg-Y-Om9xs0KE svg path {
+                      fill: #a92323;
+                    }
+                  </style>
+                  <defs>
+                    <style type="text/css"></style>
+                  </defs>
+                  <path
+                    d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z"
+                    fill="#999999" p-id="1298"></path>
+                </svg>
               </div>
               <div class="animate-parent">
                 <img data-animate="up" src="resources/images/image1.jpg" alt="">
@@ -447,14 +517,357 @@
           <div class="flex gap-4">
             <div class="mt-3">
               <div class="animate-parent">
-                <img data-animate="up" src="resources/images/image1.jpg" alt="" style="--anim-delay: 0ms;" class="in-view">
+                <img data-animate="up" src="resources/images/image1.jpg" alt="" style="--anim-delay: 0ms;"
+                  class="in-view">
               </div>
             </div>
             <div class="mt-15 animate-parent">
               <div class="heart-svg flex gap-5 justify-end mb-4 pr-4">
-                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297" xmlns:xlink="http://www.w3.org/1999/xlink"><style>#svg-Y-Om9xs0KE svg path { fill: #a92323; }</style><defs><style type="text/css"></style></defs><path d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z" fill="#999999" p-id="1298"></path></svg>
-                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297" xmlns:xlink="http://www.w3.org/1999/xlink"><style>#svg-Y-Om9xs0KE svg path { fill: #a92323; }</style><defs><style type="text/css"></style></defs><path d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z" fill="#999999" p-id="1298"></path></svg>
-                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297" xmlns:xlink="http://www.w3.org/1999/xlink"><style>#svg-Y-Om9xs0KE svg path { fill: #a92323; }</style><defs><style type="text/css"></style></defs><path d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z" fill="#999999" p-id="1298"></path></svg>
+                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon"
+                  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <style>
+                    #svg-Y-Om9xs0KE svg path {
+                      fill: #a92323;
+                    }
+                  </style>
+                  <defs>
+                    <style type="text/css"></style>
+                  </defs>
+                  <path
+                    d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z"
+                    fill="#999999" p-id="1298"></path>
+                </svg>
+                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon"
+                  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <style>
+                    #svg-Y-Om9xs0KE svg path {
+                      fill: #a92323;
+                    }
+                  </style>
+                  <defs>
+                    <style type="text/css"></style>
+                  </defs>
+                  <path
+                    d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z"
+                    fill="#999999" p-id="1298"></path>
+                </svg>
+                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon"
+                  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <style>
+                    #svg-Y-Om9xs0KE svg path {
+                      fill: #a92323;
+                    }
+                  </style>
+                  <defs>
+                    <style type="text/css"></style>
+                  </defs>
+                  <path
+                    d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z"
+                    fill="#999999" p-id="1298"></path>
+                </svg>
+              </div>
+              <div class="animate-parent">
+                <img data-animate="up" src="resources/images/image1.jpg" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="mt-3">
+              <div class="animate-parent">
+                <img data-animate="up" src="resources/images/image1.jpg" alt="" style="--anim-delay: 0ms;"
+                  class="in-view">
+              </div>
+            </div>
+            <div class="mt-15 animate-parent">
+              <div class="heart-svg flex gap-5 justify-end mb-4 pr-4">
+                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon"
+                  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <style>
+                    #svg-Y-Om9xs0KE svg path {
+                      fill: #a92323;
+                    }
+                  </style>
+                  <defs>
+                    <style type="text/css"></style>
+                  </defs>
+                  <path
+                    d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z"
+                    fill="#999999" p-id="1298"></path>
+                </svg>
+                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon"
+                  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <style>
+                    #svg-Y-Om9xs0KE svg path {
+                      fill: #a92323;
+                    }
+                  </style>
+                  <defs>
+                    <style type="text/css"></style>
+                  </defs>
+                  <path
+                    d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z"
+                    fill="#999999" p-id="1298"></path>
+                </svg>
+                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon"
+                  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <style>
+                    #svg-Y-Om9xs0KE svg path {
+                      fill: #a92323;
+                    }
+                  </style>
+                  <defs>
+                    <style type="text/css"></style>
+                  </defs>
+                  <path
+                    d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z"
+                    fill="#999999" p-id="1298"></path>
+                </svg>
+              </div>
+              <div class="animate-parent">
+                <img data-animate="up" src="resources/images/image1.jpg" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="mt-3">
+              <div class="animate-parent">
+                <img data-animate="up" src="resources/images/image1.jpg" alt="" style="--anim-delay: 0ms;"
+                  class="in-view">
+              </div>
+            </div>
+            <div class="mt-15 animate-parent">
+              <div class="heart-svg flex gap-5 justify-end mb-4 pr-4">
+                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon"
+                  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <style>
+                    #svg-Y-Om9xs0KE svg path {
+                      fill: #a92323;
+                    }
+                  </style>
+                  <defs>
+                    <style type="text/css"></style>
+                  </defs>
+                  <path
+                    d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z"
+                    fill="#999999" p-id="1298"></path>
+                </svg>
+                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon"
+                  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <style>
+                    #svg-Y-Om9xs0KE svg path {
+                      fill: #a92323;
+                    }
+                  </style>
+                  <defs>
+                    <style type="text/css"></style>
+                  </defs>
+                  <path
+                    d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z"
+                    fill="#999999" p-id="1298"></path>
+                </svg>
+                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon"
+                  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <style>
+                    #svg-Y-Om9xs0KE svg path {
+                      fill: #a92323;
+                    }
+                  </style>
+                  <defs>
+                    <style type="text/css"></style>
+                  </defs>
+                  <path
+                    d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z"
+                    fill="#999999" p-id="1298"></path>
+                </svg>
+              </div>
+              <div class="animate-parent">
+                <img data-animate="up" src="resources/images/image1.jpg" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="mt-3">
+              <div class="animate-parent">
+                <img data-animate="up" src="resources/images/image1.jpg" alt="" style="--anim-delay: 0ms;"
+                  class="in-view">
+              </div>
+            </div>
+            <div class="mt-15 animate-parent">
+              <div class="heart-svg flex gap-5 justify-end mb-4 pr-4">
+                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon"
+                  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <style>
+                    #svg-Y-Om9xs0KE svg path {
+                      fill: #a92323;
+                    }
+                  </style>
+                  <defs>
+                    <style type="text/css"></style>
+                  </defs>
+                  <path
+                    d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z"
+                    fill="#999999" p-id="1298"></path>
+                </svg>
+                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon"
+                  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <style>
+                    #svg-Y-Om9xs0KE svg path {
+                      fill: #a92323;
+                    }
+                  </style>
+                  <defs>
+                    <style type="text/css"></style>
+                  </defs>
+                  <path
+                    d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z"
+                    fill="#999999" p-id="1298"></path>
+                </svg>
+                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon"
+                  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <style>
+                    #svg-Y-Om9xs0KE svg path {
+                      fill: #a92323;
+                    }
+                  </style>
+                  <defs>
+                    <style type="text/css"></style>
+                  </defs>
+                  <path
+                    d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z"
+                    fill="#999999" p-id="1298"></path>
+                </svg>
+              </div>
+              <div class="animate-parent">
+                <img data-animate="up" src="resources/images/image1.jpg" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="mt-3">
+              <div class="animate-parent">
+                <img data-animate="up" src="resources/images/image1.jpg" alt="" style="--anim-delay: 0ms;"
+                  class="in-view">
+              </div>
+            </div>
+            <div class="mt-15 animate-parent">
+              <div class="heart-svg flex gap-5 justify-end mb-4 pr-4">
+                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon"
+                  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <style>
+                    #svg-Y-Om9xs0KE svg path {
+                      fill: #a92323;
+                    }
+                  </style>
+                  <defs>
+                    <style type="text/css"></style>
+                  </defs>
+                  <path
+                    d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z"
+                    fill="#999999" p-id="1298"></path>
+                </svg>
+                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon"
+                  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <style>
+                    #svg-Y-Om9xs0KE svg path {
+                      fill: #a92323;
+                    }
+                  </style>
+                  <defs>
+                    <style type="text/css"></style>
+                  </defs>
+                  <path
+                    d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z"
+                    fill="#999999" p-id="1298"></path>
+                </svg>
+                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon"
+                  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <style>
+                    #svg-Y-Om9xs0KE svg path {
+                      fill: #a92323;
+                    }
+                  </style>
+                  <defs>
+                    <style type="text/css"></style>
+                  </defs>
+                  <path
+                    d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z"
+                    fill="#999999" p-id="1298"></path>
+                </svg>
+              </div>
+              <div class="animate-parent">
+                <img data-animate="up" src="resources/images/image1.jpg" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="mt-3">
+              <div class="animate-parent">
+                <img data-animate="up" src="resources/images/image1.jpg" alt="" style="--anim-delay: 0ms;"
+                  class="in-view">
+              </div>
+            </div>
+            <div class="mt-15 animate-parent">
+              <div class="heart-svg flex gap-5 justify-end mb-4 pr-4">
+                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon"
+                  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <style>
+                    #svg-Y-Om9xs0KE svg path {
+                      fill: #a92323;
+                    }
+                  </style>
+                  <defs>
+                    <style type="text/css"></style>
+                  </defs>
+                  <path
+                    d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z"
+                    fill="#999999" p-id="1298"></path>
+                </svg>
+                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon"
+                  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <style>
+                    #svg-Y-Om9xs0KE svg path {
+                      fill: #a92323;
+                    }
+                  </style>
+                  <defs>
+                    <style type="text/css"></style>
+                  </defs>
+                  <path
+                    d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z"
+                    fill="#999999" p-id="1298"></path>
+                </svg>
+                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon"
+                  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <style>
+                    #svg-Y-Om9xs0KE svg path {
+                      fill: #a92323;
+                    }
+                  </style>
+                  <defs>
+                    <style type="text/css"></style>
+                  </defs>
+                  <path
+                    d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z"
+                    fill="#999999" p-id="1298"></path>
+                </svg>
               </div>
               <div class="animate-parent">
                 <img data-animate="up" src="resources/images/image1.jpg" alt="">
@@ -462,7 +875,7 @@
             </div>
           </div>
 
-   
+
 
         </div>
       </div>
