@@ -414,9 +414,19 @@ body {
 }
 
 .tri37 {
-  text-decoration: underline;
-  text-underline-offset: 6px;
-  text-decoration-thickness: 1px;
+  position: relative;
+}
+
+.tri37:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  max-width: 180px;
+  height: 1px;
+  bottom: -6px;
+  background-color: #008000;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* Splash Screen */

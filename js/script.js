@@ -1,3 +1,18 @@
+const guestNames = {
+  '1': 'Bạn Mỹ Lê',
+  '2': 'Mỹ Liên',
+};
+
+function updateGuestName() {
+  const el = document.getElementById('guest-name');
+  if (!el) return;
+  const guest = new URLSearchParams(window.location.search).get('guest');
+  const name = guestNames[guest];
+  if (name) el.textContent = name;
+}
+
+updateGuestName();
+
 // Countdown function
 function updateCountdown() {
   const targetDate = new Date('2026-06-07T00:00:00').getTime();
