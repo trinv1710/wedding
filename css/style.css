@@ -1,6 +1,6 @@
 /* Will delete */
 #splashScreen {
-  display: none;
+  /* display: none; */
 }
 
 :root {
@@ -244,6 +244,15 @@ body {
   font-size: 14px;
   padding-right: 2px;
   margin-top: 32px;
+}
+
+.heart-svg path {
+  fill: #a92323;
+}
+
+.heart-svg svg {
+  width: 30px;
+  height: 30px;
 }
 
 .tri4 {

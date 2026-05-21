@@ -3,8 +3,25 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+  <meta id="viewport-meta" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
     data-next-head="">
+  <script>
+    (function () {
+      var DESIGN_WIDTH = 500;
+      function fit() {
+        var w = window.screen.width || document.documentElement.clientWidth;
+        var scale = Math.min(1, w / DESIGN_WIDTH);
+        document.getElementById('viewport-meta').setAttribute(
+          'content',
+          'width=' + DESIGN_WIDTH + ', initial-scale=' + scale +
+          ', minimum-scale=' + scale + ', maximum-scale=' + scale +
+          ', user-scalable=no'
+        );
+      }
+      fit();
+      window.addEventListener('orientationchange', fit);
+    })();
+  </script>
   <title>Document</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -122,17 +139,15 @@
           </div>
           <div class="tri11 flex justify-between mb-1">
             <div class="tri12 w-[45%]">
-              Ông: Lê Ngọc Lâm
-              <br>
-              Bà: Cao Thị Thu Trinh
+              <div>Ông: Lê Ngọc Lâm</div>
+              <div>Bà: Cao Thị Thu Trinh</div>
             </div>
             <div class="w-[10%] flex justify-center items-center">
               <div class="h-full w-[1px] bg-[#631717]"></div>
             </div>
             <div class="tri13 w-[45%]">
-              Ông: Nguyễn Văn Cư
-              <br>
-              Bà: Trần Thị Lang
+              <div>Ông: Nguyễn Văn Cư</div>
+              <div>>Bà: Trần Thị Lang</div>
             </div>
           </div>
         </div>
@@ -402,89 +417,52 @@
 
           <!-- 1. Full width -->
           <div class="ab-full animate-parent">
-            <div class="album-item" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
+            <div class="" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy" class="w-full max-h-[710px] object-cover"></div>
           </div>
 
-          <!-- 2. Portrait trái + 2 ngang phải (photos 2-4) -->
-          <div class="ab-pls animate-parent">
-            <div class="album-item album-portrait" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
-            <div class="album-item" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
-            <div class="album-item" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
+          <div class="flex gap-4">
+            <div class="mt-15">
+              <div class="heart-svg flex gap-5 justify-end mb-4">
+                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297" xmlns:xlink="http://www.w3.org/1999/xlink"><style>#svg-Y-Om9xs0KE svg path { fill: #a92323; }</style><defs><style type="text/css"></style></defs><path d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z" fill="#999999" p-id="1298"></path></svg>
+                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297" xmlns:xlink="http://www.w3.org/1999/xlink"><style>#svg-Y-Om9xs0KE svg path { fill: #a92323; }</style><defs><style type="text/css"></style></defs><path d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z" fill="#999999" p-id="1298"></path></svg>
+                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297" xmlns:xlink="http://www.w3.org/1999/xlink"><style>#svg-Y-Om9xs0KE svg path { fill: #a92323; }</style><defs><style type="text/css"></style></defs><path d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z" fill="#999999" p-id="1298"></path></svg>
+              </div>
+              <div class="animate-parent">
+                <img data-animate="up" src="resources/images/image1.jpg" alt="">
+              </div>
+            </div>
+            <div class="mt-3 animate-parent">
+              <img data-animate="up" src="resources/images/image1.jpg" alt="">
+            </div>
           </div>
 
-          <!-- 3. 2 ô bằng nhau (photos 5-6) -->
-          <div class="ab-2 animate-parent">
-            <div class="album-item" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
-            <div class="album-item" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
+          <div class="flex justify-end pr-8 mb-4">
+            <img src="resources/images/decor5.png" alt="">
           </div>
 
-          <!-- 4. 2 ngang trái + portrait phải (photos 7-9) -->
-          <div class="ab-slp animate-parent">
-            <div class="album-item" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
-            <div class="album-item album-portrait" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
-            <div class="album-item" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
+          <div class="px-7 animate-parent">
+            <img data-animate="up" src="resources/images/image1.jpg" alt="" class="w-full max-h-[300px] object-cover">
           </div>
 
-          <!-- 5. Full width (photo 10) -->
-          <div class="ab-full animate-parent">
-            <div class="album-item" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
+          <div class="flex gap-4">
+            <div class="mt-3">
+              <div class="animate-parent">
+                <img data-animate="up" src="resources/images/image1.jpg" alt="" style="--anim-delay: 0ms;" class="in-view">
+              </div>
+            </div>
+            <div class="mt-15 animate-parent">
+              <div class="heart-svg flex gap-5 justify-end mb-4 pr-4">
+                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297" xmlns:xlink="http://www.w3.org/1999/xlink"><style>#svg-Y-Om9xs0KE svg path { fill: #a92323; }</style><defs><style type="text/css"></style></defs><path d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z" fill="#999999" p-id="1298"></path></svg>
+                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297" xmlns:xlink="http://www.w3.org/1999/xlink"><style>#svg-Y-Om9xs0KE svg path { fill: #a92323; }</style><defs><style type="text/css"></style></defs><path d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z" fill="#999999" p-id="1298"></path></svg>
+                <svg preserveAspectRatio="none" width="100%" height="100%" t="1632291319559" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1297" xmlns:xlink="http://www.w3.org/1999/xlink"><style>#svg-Y-Om9xs0KE svg path { fill: #a92323; }</style><defs><style type="text/css"></style></defs><path d="M256.004301 97.28c95.232 0 180.224 65.536 228.352 176.128a31.50848 31.50848 0 1 0 57.344 0c45.056-105.472 133.12-172.032 228.352-172.032 107.52 0 223.232 87.04 224.256 279.552 1.024 143.36-108.544 210.944-215.04 277.504-25.6 15.36-49.152 30.72-72.704 47.104-77.824 55.296-153.6 129.024-194.56 187.392-38.912-57.344-110.592-130.048-196.608-186.368-18.432-12.288-37.888-24.576-59.392-36.864C145.412301 602.112 29.700301 532.48 30.724301 382.976 31.748301 186.368 148.484301 97.28 256.004301 97.28m0-30.72C124.932301 66.56 1.028301 178.176 0.004301 382.976c-1.024 196.608 179.2 270.336 299.008 349.184C415.748301 808.96 498.692301 913.408 512.004301 957.44c11.264-44.032 103.424-150.528 211.968-227.328 118.784-83.968 301.056-152.576 300.032-349.184-1.024-203.776-124.928-310.272-254.976-310.272-99.328 0-202.752 62.464-257.024 190.464-57.344-132.096-158.72-194.56-256-194.56z" fill="#999999" p-id="1298"></path></svg>
+              </div>
+              <div class="animate-parent">
+                <img data-animate="up" src="resources/images/image1.jpg" alt="">
+              </div>
+            </div>
           </div>
 
-          <!-- 6. 3 cột đứng (photos 11-13) -->
-          <div class="ab-3 animate-parent">
-            <div class="album-item" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
-            <div class="album-item" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
-            <div class="album-item" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
-          </div>
-
-          <!-- 7. Portrait trái + 2 ngang phải (photos 14-16) -->
-          <div class="ab-pls animate-parent">
-            <div class="album-item album-portrait" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
-            <div class="album-item" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
-            <div class="album-item" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
-          </div>
-
-          <!-- 8. 2 ô bằng nhau (photos 17-18) -->
-          <div class="ab-2 animate-parent">
-            <div class="album-item" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
-            <div class="album-item" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
-          </div>
-
-          <!-- 9. Full width (photo 19) -->
-          <div class="ab-full animate-parent">
-            <div class="album-item" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
-          </div>
-
-          <!-- 10. 2 ngang trái + portrait phải (photos 20-22) -->
-          <div class="ab-slp animate-parent">
-            <div class="album-item" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
-            <div class="album-item album-portrait" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
-            <div class="album-item" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
-          </div>
-
-          <!-- 11. 3 cột đứng (photos 23-25) -->
-          <div class="ab-3 animate-parent">
-            <div class="album-item" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
-            <div class="album-item" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
-            <div class="album-item" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
-          </div>
-
-          <!-- 12. 2 ô bằng nhau (photos 26-27) -->
-          <div class="ab-2 animate-parent">
-            <div class="album-item" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
-            <div class="album-item" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
-          </div>
-
-          <!-- 13. Full width (photo 28) -->
-          <div class="ab-full animate-parent">
-            <div class="album-item" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
-          </div>
-
-          <!-- 14. 2 ô bằng nhau (photos 29-30) -->
-          <div class="ab-2 animate-parent">
-            <div class="album-item" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
-            <div class="album-item" data-animate="up"><img src="resources/images/image1.jpg" alt="" loading="lazy"></div>
-          </div>
+   
 
         </div>
       </div>
