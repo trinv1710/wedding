@@ -4,11 +4,13 @@ const guestNames = {
 };
 
 function updateGuestName() {
-  const el = document.getElementById('guest-name');
-  if (!el) return;
   const guest = new URLSearchParams(window.location.search).get('guest');
   const name = guestNames[guest];
-  if (name) el.textContent = name;
+  if (!name) return;
+  for (const id of ['guest-name', 'splash-guest']) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = name;
+  }
 }
 
 updateGuestName();
