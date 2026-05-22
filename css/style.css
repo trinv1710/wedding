@@ -376,6 +376,19 @@ body {
   50% { transform: scale(1.06); }
 }
 
+.gift-box-icon {
+  transform-origin: center;
+  animation: animation-wobble 2.4s ease-in-out infinite;
+}
+
+@keyframes animation-wobble {
+  0% { transform: scale(1); }
+  10%, 20% { transform: scale(.9) rotate(-3deg); }
+  30%, 50%, 70%, 90% { transform: scale(1.1) rotate(3deg); }
+  40%, 60%, 80% { transform: scale(1.1) rotate(-3deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+
 .time-unit {
   background: var(--color-primary);
   display: flex;
@@ -847,4 +860,8 @@ body {
   left: -3px;
   top: 28px;
   transform: rotate(-6deg);
+}
+
+.tri-50 {
+  height: 100%;
 }

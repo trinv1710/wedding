@@ -67,3 +67,50 @@ function updateCountdown() {
 // Update countdown immediately and then every second
 updateCountdown();
 setInterval(updateCountdown, 1000);
+
+// Gift box modal
+const giftBoxTrigger = document.querySelector('.gift-box-trigger');
+const giftBoxModal = document.querySelector('.gift-box-modal');
+const giftBoxClose = document.querySelector('.gift-box-close');
+const giftBoxCopy = document.querySelector('.gift-box-copy');
+
+function openGiftBox() {
+  if (!giftBoxModal) return;
+  giftBoxModal.classList.remove('hidden');
+  giftBoxModal.classList.add('flex');
+}
+
+function closeGiftBox() {
+  if (!giftBoxModal) return;
+  giftBoxModal.classList.add('hidden');
+  giftBoxModal.classList.remove('flex');
+}
+
+if (giftBoxTrigger) giftBoxTrigger.addEventListener('click', openGiftBox);
+if (giftBoxClose) giftBoxClose.addEventListener('click', closeGiftBox);
+if (giftBoxModal) {
+  giftBoxModal.addEventListener('click', (e) => {
+    if (e.target === giftBoxModal) closeGiftBox();
+  });
+}
+if (giftBoxCopy) {
+  giftBoxCopy.addEventListener('click', () => {
+    const account = giftBoxCopy.dataset.account || '';
+    const done = () => {
+      const original = giftBoxCopy.textContent;
+      giftBoxCopy.textContent = 'Đã sao chép!';
+      setTimeout(() => { giftBoxCopy.textContent = original; }, 1500);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(account).then(done).catch(done);
+    } else {
+      const ta = document.createElement('textarea');
+      ta.value = account;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); } catch (_) {}
+      document.body.removeChild(ta);
+      done();
+    }
+  });
+}
