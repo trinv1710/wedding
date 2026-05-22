@@ -85,6 +85,17 @@
     <div class="tri2 bg-white">
       <audio id="triAudio" src="resources/media/marry-you.mp3" loop preload="auto"></audio>
 
+      <button id="musicToggle" type="button" class="music-toggle is-paused" aria-label="Bật / tắt nhạc">
+        <span class="music-toggle__wave"></span>
+        <span class="music-toggle__wave"></span>
+        <span class="music-toggle__wave"></span>
+        <span class="music-toggle__disc">
+          <svg class="music-toggle__icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z" />
+          </svg>
+        </span>
+      </button>
+
       <div class="tri3 text-white">
         <div class="tri4">
           SAVE THE DATE
@@ -739,17 +750,40 @@
     document.addEventListener('DOMContentLoaded', function () {
       const triAudio = document.getElementById('triAudio');
       const splashScreen = document.getElementById('splashScreen');
+      const musicToggle = document.getElementById('musicToggle');
+
+      function setMusicState(playing) {
+        if (!musicToggle) return;
+        musicToggle.classList.toggle('is-playing', playing);
+        musicToggle.classList.toggle('is-paused', !playing);
+        musicToggle.setAttribute('aria-pressed', playing ? 'true' : 'false');
+      }
 
       splashScreen.addEventListener('click', function () {
-        // Fade out splash screen
         splashScreen.classList.add('splash-hide');
         setTimeout(function () {
           splashScreen.style.display = 'none';
         }, 800);
 
-        // Play music
-        triAudio.play();
+        if (musicToggle) musicToggle.classList.add('is-visible');
+
+        triAudio.play().catch(function () {});
       });
+
+      triAudio.addEventListener('play', function () { setMusicState(true); });
+      triAudio.addEventListener('pause', function () { setMusicState(false); });
+      triAudio.addEventListener('ended', function () { setMusicState(false); });
+
+      if (musicToggle) {
+        musicToggle.addEventListener('click', function (e) {
+          e.stopPropagation();
+          if (triAudio.paused) {
+            triAudio.play().catch(function () {});
+          } else {
+            triAudio.pause();
+          }
+        });
+      }
     });
   </script>
   <script src="js/script.js"></script>

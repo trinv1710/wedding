@@ -6,7 +6,10 @@
       "Bash(python3 -c \"import pyzbar\")",
       "Bash(python3 -c \"import qreader\")",
       "Bash(python3 -c \"import cv2\")",
-      "Bash(brew install *)"
+      "Bash(brew install *)",
+      "Read(//tmp/qr_png/**)",
+      "Bash(magick identify *)",
+      "Bash(grep -o \"data:image/png;base64,[A-Za-z0-9+/=]\\\\{50\\\\}\" /Users/tri.nguyen/Project/wedding/qr/guest1.svg)"
     ]
   }
 }
