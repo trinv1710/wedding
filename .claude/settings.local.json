@@ -23,7 +23,14 @@
       "WebFetch(domain:www.qrcode-monkey.com)",
       "WebFetch(domain:rapidapi.com)",
       "Bash(sips -g pixelWidth -g pixelHeight /Users/tri.nguyen/Project/wedding/resources/images/image11.jpg)",
-      "Bash(awk '{print \"size:\", $5}')"
+      "Bash(awk '{print \"size:\", $5}')",
+      "Bash(chmod +x /Users/tri.nguyen/Project/wedding/scripts/bump-cache.sh)",
+      "Bash(/Users/tri.nguyen/Project/wedding/scripts/bump-cache.sh)",
+      "Bash(magick -version)",
+      "Bash(sips --help)",
+      "Read(//private/tmp/**)",
+      "Bash(magick -size 800x200 xc:'#631717' -font /Users/tri.nguyen/Project/wedding/resources/fonts/UNI_Chu_truyen_thong.ttf -fill white -pointsize 80 -gravity center -annotate +0+0 \"Văn Trí & Mỹ Lê\" font_test.png)",
+      "Bash(magick -size 1200x630 xc:'#631717' \\\\\\( image11.jpg -resize 480x -gravity center -extent 480x630 \\\\\\) -gravity east -composite -font /Users/tri.nguyen/Project/wedding/resources/fonts/UNI_Chu_truyen_thong.ttf -fill '#f5e6c8' -pointsize 130 -gravity northwest -annotate +80+130 'Văn Trí' -annotate +80+330 'Mỹ Lê' -fill white -pointsize 80 -annotate +320+240 '&' -fill '#f5e6c8' -font Helvetica -pointsize 26 -annotate +80+70 'WEDDING  INVITATION' -fill white -pointsize 30 -annotate +80+510 'SAVE  THE  DATE' -fill '#f5e6c8' -font Helvetica-Bold -pointsize 44 -annotate +80+560 '07 . 06 . 2026' og-cover.jpg)"
     ]
   }
 }
