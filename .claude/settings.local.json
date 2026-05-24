@@ -9,7 +9,19 @@
       "Bash(brew install *)",
       "Read(//tmp/qr_png/**)",
       "Bash(magick identify *)",
-      "Bash(grep -o \"data:image/png;base64,[A-Za-z0-9+/=]\\\\{50\\\\}\" /Users/tri.nguyen/Project/wedding/qr/guest1.svg)"
+      "Bash(grep -o \"data:image/png;base64,[A-Za-z0-9+/=]\\\\{50\\\\}\" /Users/tri.nguyen/Project/wedding/qr/guest1.svg)",
+      "Bash(pip3 list *)",
+      "Bash(pip3 install *)",
+      "Bash(python3 scripts/gen_qr.py)",
+      "Bash(curl -sL -o /tmp/qrmonkey_test.svg -w \"HTTP %{http_code}  size=%{size_download}  type=%{content_type}\\\\n\" 'https://api.qrcode-monkey.com//qr/custom?download=true&file=svg&data=https%3A%2F%2Ftrinv1710.github.io%2Fwedding%2F%3Fguest%3D24&size=1000&config=%7B%22body%22%3A%22square%22%2C%22eye%22%3A%22frame0%22%2C%22eyeBall%22%3A%22ball0%22%2C%22erf1%22%3A%5B%5D%2C%22erf2%22%3A%5B%5D%2C%22erf3%22%3A%5B%5D%2C%22brf1%22%3A%5B%5D%2C%22brf2%22%3A%5B%5D%2C%22brf3%22%3A%5B%5D%2C%22bodyColor%22%3A%22%23000000%22%2C%22bgColor%22%3A%22%23FFFFFF%22%2C%22eye1Color%22%3A%22%23000000%22%2C%22eye2Color%22%3A%22%23000000%22%2C%22eye3Color%22%3A%22%23000000%22%2C%22eyeBall1Color%22%3A%22%23000000%22%2C%22eyeBall2Color%22%3A%22%23000000%22%2C%22eyeBall3Color%22%3A%22%23000000%22%2C%22gradientColor1%22%3A%22%22%2C%22gradientColor2%22%3A%22%22%2C%22gradientType%22%3A%22linear%22%2C%22gradientOnEyes%22%3A%22true%22%2C%22logo%22%3A%2225b3996d1290ae36398094132bb7bc9dd252db04.jpg%22%2C%22logoMode%22%3A%22default%22%7D')",
+      "Read(//tmp/**)",
+      "Bash(curl -sL -o /Users/tri.nguyen/Project/wedding/qr/guest25.svg -w \"HTTP %{http_code}  size=%{size_download}\\\\n\" 'https://api.qrcode-monkey.com//qr/custom?download=true&file=svg&data=https%3A%2F%2Ftrinv1710.github.io%2Fwedding%2F%3Fguest%3D25&size=1000&config=%7B%22body%22%3A%22square%22%2C%22eye%22%3A%22frame0%22%2C%22eyeBall%22%3A%22ball0%22%2C%22erf1%22%3A%5B%5D%2C%22erf2%22%3A%5B%5D%2C%22erf3%22%3A%5B%5D%2C%22brf1%22%3A%5B%5D%2C%22brf2%22%3A%5B%5D%2C%22brf3%22%3A%5B%5D%2C%22bodyColor%22%3A%22%23000000%22%2C%22bgColor%22%3A%22%23FFFFFF%22%2C%22eye1Color%22%3A%22%23000000%22%2C%22eye2Color%22%3A%22%23000000%22%2C%22eye3Color%22%3A%22%23000000%22%2C%22eyeBall1Color%22%3A%22%23000000%22%2C%22eyeBall2Color%22%3A%22%23000000%22%2C%22eyeBall3Color%22%3A%22%23000000%22%2C%22gradientColor1%22%3A%22%22%2C%22gradientColor2%22%3A%22%22%2C%22gradientType%22%3A%22linear%22%2C%22gradientOnEyes%22%3A%22true%22%2C%22logo%22%3A%2225b3996d1290ae36398094132bb7bc9dd252db04.jpg%22%2C%22logoMode%22%3A%22default%22%7D')",
+      "Bash(qlmanage -t -s 500 -o /tmp /Users/tri.nguyen/Project/wedding/qr/guest25.svg)",
+      "Bash(chmod +x /Users/tri.nguyen/Project/wedding/scripts/gen_qr_batch.sh)",
+      "Bash(/Users/tri.nguyen/Project/wedding/scripts/gen_qr_batch.sh 26 27)",
+      "Bash(/Users/tri.nguyen/Project/wedding/scripts/gen_qr_batch.sh 28 *)",
+      "WebFetch(domain:www.qrcode-monkey.com)",
+      "WebFetch(domain:rapidapi.com)"
     ]
   }
 }

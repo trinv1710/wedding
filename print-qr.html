@@ -64,7 +64,7 @@
     min-height: 297mm;
     margin: 0 auto 12px;
     background: white;
-    padding: 10mm;
+    padding: 8mm 7mm;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-auto-rows: min-content;
@@ -74,7 +74,7 @@
 
   .card {
     width: 28mm;
-    height: 38mm;
+    height: 35mm;
     border: 1px dashed #c9a96b;
     border-radius: 2mm;
     padding: 2mm 1.5mm 1.2mm;
@@ -133,11 +133,10 @@
   }
   .tagline::before,
   .tagline::after {
-    content: "";
-    display: inline-block;
-    width: 2.5mm;
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--gold) 30%, var(--gold) 70%, transparent);
+    content: "\2726"; /* ✦ Black Four Pointed Star */
+    color: var(--gold);
+    font-size: 5pt;
+    line-height: 1;
     flex-shrink: 0;
   }
 
@@ -183,7 +182,7 @@
   .heart {
     font-size: 5pt;
     color: var(--primary);
-    margin: 0 2px;
+    margin: 0 3px;
     vertical-align: middle;
   }
 
@@ -198,10 +197,8 @@
     .page:last-child { page-break-after: auto; }
   }
 
-  /* Force backgrounds/gradients to print (gold lines around "Scan me", card gradients) */
+  /* Force backgrounds to print (card gradient + scan-me gold line) */
   .card,
-  .tagline::before,
-  .tagline::after,
   .scan-label::before,
   .scan-label::after {
     -webkit-print-color-adjust: exact;
@@ -227,7 +224,7 @@
 <div id="pages"></div>
 
 <script>
-  const PER_PAGE = 36; // 6 cols × 6 rows
+  const PER_PAGE = 42; // 6 cols × 7 rows
 
   const params = new URLSearchParams(location.search);
   const urlFrom = parseInt(params.get('from'));
