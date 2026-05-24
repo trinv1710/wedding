@@ -66,18 +66,18 @@
     background: white;
     padding: 10mm;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-auto-rows: min-content;
-    gap: 4mm;
+    gap: 3mm;
     box-shadow: 0 2px 12px rgba(0,0,0,0.1);
   }
 
   .card {
-    width: 45mm;
-    height: 60mm;
+    width: 29mm;
+    height: 45mm;
     border: 1px dashed #c9a96b;
-    border-radius: 3mm;
-    padding: 3mm 2mm 2mm;
+    border-radius: 2mm;
+    padding: 2mm 1.5mm 1.5mm;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -93,97 +93,96 @@
   .card::after {
     content: "";
     position: absolute;
-    width: 8mm;
-    height: 8mm;
+    width: 5mm;
+    height: 5mm;
     border: 1px solid var(--primary);
     opacity: 0.5;
   }
   .card::before {
-    top: 1mm; left: 1mm;
+    top: 0.8mm; left: 0.8mm;
     border-right: none;
     border-bottom: none;
-    border-top-left-radius: 2mm;
+    border-top-left-radius: 1.5mm;
   }
   .card::after {
-    bottom: 1mm; right: 1mm;
+    bottom: 0.8mm; right: 0.8mm;
     border-left: none;
     border-top: none;
-    border-bottom-right-radius: 2mm;
+    border-bottom-right-radius: 1.5mm;
   }
 
   .header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1mm;
-    margin-top: 1mm;
+    gap: 0.5mm;
   }
 
   .tagline {
     font-family: Baskerville, "Times New Roman", serif;
-    font-size: 6pt;
-    letter-spacing: 1.2px;
+    font-size: 4pt;
+    letter-spacing: 0.6px;
     text-transform: uppercase;
     color: var(--gold);
     display: flex;
     align-items: center;
-    gap: 3px;
+    gap: 2px;
     line-height: 1;
     white-space: nowrap;
-    margin-bottom: 2mm;
   }
   .tagline::before,
   .tagline::after {
     content: "";
     display: inline-block;
-    width: 3mm;
-    height: 1px;
+    width: 2mm;
+    height: 0.5px;
     background: linear-gradient(to right, transparent, var(--gold), transparent);
     flex-shrink: 0;
   }
 
   .names {
     font-family: 'Great Vibes', cursive;
-    font-size: 14pt;
+    font-size: 9pt;
     color: var(--primary);
     line-height: 1;
+    white-space: nowrap;
   }
 
   .qr-wrap {
-    width: 30mm;
-    height: 30mm;
+    width: 22mm;
+    height: 22mm;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   .qr-wrap img {
-    width: 30mm;
-    height: 30mm;
+    width: 22mm;
+    height: 22mm;
     display: block;
   }
 
   .scan-label {
     font-family: 'Great Vibes', cursive;
-    font-size: 13pt;
+    font-size: 8pt;
     color: var(--primary);
     line-height: 1;
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 3px;
   }
   .scan-label::before,
   .scan-label::after {
     content: "";
     display: inline-block;
-    width: 8mm;
-    height: 1px;
+    width: 4mm;
+    height: 0.5px;
     background: linear-gradient(to right, transparent, var(--gold), transparent);
   }
 
   .heart {
-    font-size: 8pt;
+    font-size: 5pt;
     color: var(--primary);
-    margin: 0 4px;
+    margin: 0 2px;
     vertical-align: middle;
   }
 
@@ -227,7 +226,7 @@
 <div id="pages"></div>
 
 <script>
-  const PER_PAGE = 16; // 4 cols × 4 rows
+  const PER_PAGE = 30; // 6 cols × 5 rows
 
   const params = new URLSearchParams(location.search);
   const urlFrom = parseInt(params.get('from'));
