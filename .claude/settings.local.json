@@ -21,7 +21,9 @@
       "Bash(/Users/tri.nguyen/Project/wedding/scripts/gen_qr_batch.sh 26 27)",
       "Bash(/Users/tri.nguyen/Project/wedding/scripts/gen_qr_batch.sh 28 *)",
       "WebFetch(domain:www.qrcode-monkey.com)",
-      "WebFetch(domain:rapidapi.com)"
+      "WebFetch(domain:rapidapi.com)",
+      "Bash(sips -g pixelWidth -g pixelHeight /Users/tri.nguyen/Project/wedding/resources/images/image11.jpg)",
+      "Bash(awk '{print \"size:\", $5}')"
     ]
   }
 }
