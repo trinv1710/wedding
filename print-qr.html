@@ -185,11 +185,11 @@
 <body>
 
 <div class="toolbar">
-  <label>Số QR: <input type="number" id="count" value="25" min="1" max="100"></label>
-  <label>Bắt đầu từ: <input type="number" id="start" value="1" min="1"></label>
+  <label>Từ: <input type="number" id="from" value="1" min="1"></label>
+  <label>Đến: <input type="number" id="to" value="25" min="1"></label>
   <button onclick="render()">Tạo lại</button>
   <button onclick="window.print()">In / Lưu PDF</button>
-  <span style="margin-left:auto;color:#888;font-size:12px">Cmd+P để in · QR 3cm × 3cm</span>
+  <span style="margin-left:auto;color:#888;font-size:12px">Cmd+P để in · QR 3cm × 3cm · ?from=1&to=25</span>
 </div>
 
 <div id="pages"></div>
@@ -197,21 +197,33 @@
 <script>
   const PER_PAGE = 16; // 4 cols × 4 rows
 
+  const params = new URLSearchParams(location.search);
+  const urlFrom = parseInt(params.get('from'));
+  const urlTo = parseInt(params.get('to'));
+  if (!isNaN(urlFrom)) document.getElementById('from').value = urlFrom;
+  if (!isNaN(urlTo)) document.getElementById('to').value = urlTo;
+
   function render() {
-    const count = parseInt(document.getElementById('count').value) || 25;
-    const start = parseInt(document.getElementById('start').value) || 1;
+    let from = parseInt(document.getElementById('from').value) || 1;
+    let to = parseInt(document.getElementById('to').value) || from;
+    if (to < from) [from, to] = [to, from];
+
+    const url = new URL(location.href);
+    url.searchParams.set('from', from);
+    url.searchParams.set('to', to);
+    history.replaceState(null, '', url);
+
     const pagesEl = document.getElementById('pages');
     pagesEl.innerHTML = '';
 
     let card = 0;
     let page;
-    for (let i = 0; i < count; i++) {
+    for (let n = from; n <= to; n++) {
       if (card % PER_PAGE === 0) {
         page = document.createElement('div');
         page.className = 'page';
         pagesEl.appendChild(page);
       }
-      const n = start + i;
       page.insertAdjacentHTML('beforeend', `
         <div class="card">
           <div class="names">Văn Trí <span class="heart">&#10084;</span> Mỹ Lê</div>
