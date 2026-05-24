@@ -73,11 +73,11 @@
   }
 
   .card {
-    width: 29mm;
-    height: 45mm;
+    width: 28mm;
+    height: 38mm;
     border: 1px dashed #c9a96b;
     border-radius: 2mm;
-    padding: 2mm 1.5mm 1.5mm;
+    padding: 2mm 1.5mm 1.2mm;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -129,14 +129,15 @@
     gap: 2px;
     line-height: 1;
     white-space: nowrap;
+    margin-bottom: 1mm;
   }
   .tagline::before,
   .tagline::after {
     content: "";
     display: inline-block;
-    width: 2mm;
+    width: 2.5mm;
     height: 1px;
-    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    background: linear-gradient(to right, transparent, var(--gold) 30%, var(--gold) 70%, transparent);
     flex-shrink: 0;
   }
 
@@ -176,7 +177,7 @@
     display: inline-block;
     width: 4mm;
     height: 1px;
-    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    background: linear-gradient(to right, transparent, var(--gold) 30%, var(--gold) 70%, transparent);
   }
 
   .heart {
@@ -226,7 +227,7 @@
 <div id="pages"></div>
 
 <script>
-  const PER_PAGE = 30; // 6 cols × 5 rows
+  const PER_PAGE = 36; // 6 cols × 6 rows
 
   const params = new URLSearchParams(location.search);
   const urlFrom = parseInt(params.get('from'));
