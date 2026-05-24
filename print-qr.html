@@ -111,12 +111,41 @@
     border-bottom-right-radius: 2mm;
   }
 
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1mm;
+    margin-top: 1mm;
+  }
+
+  .tagline {
+    font-family: Baskerville, "Times New Roman", serif;
+    font-size: 6pt;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .tagline::before,
+  .tagline::after {
+    content: "";
+    display: inline-block;
+    width: 3mm;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    flex-shrink: 0;
+  }
+
   .names {
     font-family: 'Great Vibes', cursive;
     font-size: 14pt;
     color: var(--primary);
     line-height: 1;
-    margin-top: 1mm;
   }
 
   .qr-wrap {
@@ -170,6 +199,8 @@
 
   /* Force backgrounds/gradients to print (gold lines around "Scan me", card gradients) */
   .card,
+  .tagline::before,
+  .tagline::after,
   .scan-label::before,
   .scan-label::after {
     -webkit-print-color-adjust: exact;
@@ -226,7 +257,10 @@
       }
       page.insertAdjacentHTML('beforeend', `
         <div class="card">
-          <div class="names">Văn Trí <span class="heart">&#10084;</span> Mỹ Lê</div>
+          <div class="header">
+            <div class="tagline">Thi&#7879;p c&#432;&#7899;i online</div>
+            <div class="names">Văn Trí <span class="heart">&#10084;</span> Mỹ Lê</div>
+          </div>
           <div class="qr-wrap"><img src="qr/guest${n}.svg" alt="QR ${n}"></div>
           <div class="scan-label">Scan me</div>
         </div>
