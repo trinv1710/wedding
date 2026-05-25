@@ -207,15 +207,15 @@ body {
   transform: translateZ(0);
 }
 
-.tri1 {
+.wedding-app {
   height: 100vh;
   width: 100vw;
   background-color: rgb(240, 242, 245);
 }
 
-.tri2 {
+.wedding-card {
   width: 100vw;
-  max-width: 500px;
+  max-width: 516px;
   height: 100vh;
   margin: auto;
   position: relative;
@@ -229,7 +229,7 @@ body {
   color: var(--color-primary);
 }
 
-.tri3 {
+.hero-section {
   position: relative;
   height: 468px;
   background: var(--color-primary);
@@ -237,13 +237,12 @@ body {
   margin-bottom: 80px;
 }
 
-.tri43 {
+.hero-invite-card {
   display: flex;
   height: 100%;
   justify-content: end;
   align-items: center;
   font-size: 14px;
-  padding-right: 2px;
   margin-top: 32px;
 }
 
@@ -256,7 +255,7 @@ body {
   height: 30px;
 }
 
-.tri4 {
+.hero-tagline {
   height: auto;
   width: 100%;
   min-width: 20px;
@@ -276,7 +275,7 @@ body {
   word-break: break-word;
 }
 
-.tri5 {
+.hero-photo {
   width: 65vw;
   max-width: 306px;
   mask-image: url('../resources/images/mask1.png');
@@ -286,55 +285,29 @@ body {
   bottom: -64px;
 }
 
-.tri5 img {
+.hero-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.tri6 {
+.section-decor {
   width: 70vw;
   max-width: 300px;
   margin: 0 auto 48px;
 }
 
-.tri9 img {
+.family-header__divider-icon img {
   width: 24px;
   height: 24px;
 }
 
-.tri15,
-.tri16 {
-  font-family: BucThu;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 28px;
-  color: var(--color-primary);
-  text-shadow: rgba(0, 0, 0, 0) 0px 0px 2px;
-}
-
-.tri18 {
-  /* border-top: 1px solid;
-  font-family: HoaTay1;
-  font-size: 32px;
-  text-shadow: rgba(0, 0, 0, 0) 0px 0px 2px; */
-}
-
-.tri19 {
+.gallery-photo {
   height: fit-content;
   border: 1px solid var(--color-primary);
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 0px;
   text-shadow: rgba(0, 0, 0, 0) 0px 0px 2px;
   max-width: 124px;
-}
-
-.tri21 {
-  background-image: linear-gradient(to right bottom, rgb(254, 242, 242), rgb(252, 231, 243), rgb(255, 247, 237));
-  opacity: 0.6;
-}
-
-.tri22 {
-  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px;
 }
 
 .font-great-vibes {
@@ -405,7 +378,7 @@ body {
   text-align: right;
 }
 
-.tri30 {
+.love-footer {
   width: 100%;
   height: 156px;
   background-color: #470a0a;
@@ -414,7 +387,7 @@ body {
   align-items: center;
 }
 
-.tri31 {
+.love-footer__message {
   font-size: 38px;
   text-shadow: 0px 0px 2px rgba(0, 0, 0, 0);
   font-weight: 500;
@@ -424,7 +397,7 @@ body {
   text-align: center;
 }
 
-.tri34 {
+.love-footer__watermark {
   font-size: 24px;
   text-shadow: rgba(0, 0, 0, 0) 0px 0px 2px;
   font-weight: 500;
@@ -432,32 +405,32 @@ body {
   position: absolute;
 }
 
-.tri32 {
+.love-footer__watermark--left {
   left: -10px;
   top: 24px;
   transform: rotate(90deg);
 }
 
-.tri33 {
+.love-footer__watermark--right {
   top: 24px;
   right: -10px;
   transform: rotate(-90deg);
 }
 
-.tri35 {
+.couple-name {
   font-size: 36px;
   color: var(--color-primary);
 }
 
-.tri36 {
+.couple-role {
   font-size: 14px;
 }
 
-.tri37 {
+.guest-name-text {
   position: relative;
 }
 
-.tri37:before {
+.guest-name-text:before {
   content: '';
   position: absolute;
   width: 100%;
@@ -951,13 +924,13 @@ body {
   aspect-ratio: 4 / 3;
 }
 
-.tri40 {
+.corner-decor {
   position: absolute;
   width: 128px;
   height: 114px;
 }
 
-.tri41 {
+.corner-decor--bottom-left {
   position: absolute;
   width: 128px;
   height: 114px;
@@ -965,23 +938,23 @@ body {
   left: -16px;
 }
 
-.tri40 img {
+.corner-decor img {
   object-fit: cover;
 }
 
-.tri38 {
+.corner-decor--left {
   left: -24px;
 }
 
-.tri38 img {
+.corner-decor--left img {
   transform: rotate(90deg);
 }
 
-.tri39 {
+.corner-decor--right {
   right: -24px;
 }
 
-.tri42 {
+.hero-decor {
   width: 160px;
   height: 200px;
   position: absolute;
@@ -990,6 +963,6 @@ body {
   transform: rotate(-6deg);
 }
 
-.tri-50 {
+.qr-image {
   height: 100%;
 }
