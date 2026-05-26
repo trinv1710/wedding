@@ -766,7 +766,7 @@ body {
   border: 1px dashed rgba(255, 255, 255, 0.22);
 }
 
-.music-toggle__disc::after {
+/* .music-toggle__disc::after {
   content: "";
   position: absolute;
   width: 6px;
@@ -774,16 +774,30 @@ body {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.85);
   box-shadow: 0 0 0 2px rgba(99, 23, 23, 0.6);
-}
+} */
 
 .music-toggle__icon {
   position: relative;
   width: 18px;
   height: 18px;
+  flex-shrink: 0;
   color: #fff;
   fill: currentColor;
   filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
   opacity: 0.95;
+}
+
+.music-toggle__mute-bar {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.music-toggle.is-paused .music-toggle__mute-bar {
+  opacity: 0.65;
+}
+
+.music-toggle.is-paused .music-toggle__note {
+  opacity: 0.65;
 }
 
 .music-toggle__wave {
@@ -836,10 +850,6 @@ body {
 .music-toggle.is-paused .music-toggle__wave {
   animation: none;
   opacity: 0;
-}
-
-.music-toggle.is-paused .music-toggle__icon {
-  opacity: 0.7;
 }
 
 @keyframes musicSpin {
