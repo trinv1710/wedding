@@ -755,7 +755,7 @@ body {
   box-shadow:
     0 4px 12px -2px rgba(99, 23, 23, 0.5),
     inset 0 0 0 2px rgba(255, 255, 255, 0.18);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: box-shadow 0.25s ease;
 }
 
 .music-toggle__disc::before {
@@ -795,20 +795,25 @@ body {
   pointer-events: none;
 }
 
-.music-toggle:hover .music-toggle__disc {
+.music-toggle:not(.is-playing):not(.is-paused):hover .music-toggle__disc {
   transform: scale(1.06);
   box-shadow:
     0 6px 16px -2px rgba(99, 23, 23, 0.6),
     inset 0 0 0 2px rgba(255, 255, 255, 0.25);
 }
 
-.music-toggle:active .music-toggle__disc {
+.music-toggle:not(.is-playing):not(.is-paused):active .music-toggle__disc {
   transform: scale(0.94);
 }
 
-/* Playing state */
-.music-toggle.is-playing .music-toggle__disc {
+/* Spin + waves (pause/resume via animation-play-state) */
+.music-toggle.is-visible .music-toggle__disc {
+  transition: none;
   animation: musicSpin 4s linear infinite;
+}
+
+.music-toggle.is-playing .music-toggle__disc {
+  animation-play-state: running;
 }
 
 .music-toggle.is-playing .music-toggle__wave {
@@ -823,10 +828,14 @@ body {
   animation-delay: 1.2s;
 }
 
-/* Paused state */
 .music-toggle.is-paused .music-toggle__disc {
-  animation: musicPulse 2.4s ease-in-out infinite;
+  animation-play-state: paused;
   filter: grayscale(0.25);
+}
+
+.music-toggle.is-paused .music-toggle__wave {
+  animation: none;
+  opacity: 0;
 }
 
 .music-toggle.is-paused .music-toggle__icon {
@@ -835,11 +844,6 @@ body {
 
 @keyframes musicSpin {
   to { transform: rotate(360deg); }
-}
-
-@keyframes musicPulse {
-  0%, 100% { transform: scale(1); box-shadow: 0 4px 12px -2px rgba(99, 23, 23, 0.5), inset 0 0 0 2px rgba(255, 255, 255, 0.18); }
-  50% { transform: scale(1.05); box-shadow: 0 6px 16px -2px rgba(99, 23, 23, 0.65), inset 0 0 0 2px rgba(255, 255, 255, 0.3); }
 }
 
 @keyframes musicWave {
