@@ -6,7 +6,7 @@ set -euo pipefail
 # ============================================
 START=231
 END=241
-BASE_URL="https://trinv1710.github.io/wedding/#guest="
+BASE_URL="https://trinv1710.github.io/wedding/guest/"
 OUT_DIR="$(cd "$(dirname "$0")/.." && pwd)/qr"
 SIZE=1000
 FILE_FORMAT="svg"          # svg | png

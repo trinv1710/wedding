@@ -1,7 +1,7 @@
 import segno
 from PIL import Image, ImageDraw
 
-URL = "https://trinv1710.github.io/wedding/#guest=24"
+URL = "https://trinv1710.github.io/wedding/guest/24"
 LOGO = "/Users/tri.nguyen/Project/wedding/resources/images/image11.jpg"
 OUT = "/Users/tri.nguyen/Project/wedding/qr/guest24.png"
 LOGO_RATIO = 0.22

@@ -116,6 +116,9 @@ function getGuestId() {
   const fromQuery = new URLSearchParams(window.location.search).get('guest');
   if (fromQuery) return fromQuery;
 
+  const pathMatch = window.location.pathname.match(/\/guest\/(\d+)\/?$/);
+  if (pathMatch) return pathMatch[1];
+
   const hash = window.location.hash.slice(1);
   if (!hash) return null;
   return new URLSearchParams(hash).get('guest');
