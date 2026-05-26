@@ -97,6 +97,19 @@ const guestNames = {
   '96': 'Gia đình chị Hương',
   '97': 'Vợ chồng chú Thăng',
   '98': 'Chị Chân',
+  '300': 'Vợ chồng anh Hùng AM',
+  '301': 'Bạn Đức Anh',
+  '302': 'Bạn Khả Vi',
+  '303': 'Bạn Linh',
+  '304': 'Bạn Hiếu',
+  '305': 'Anh Phan Anh',
+  '306': 'Anh Phan Hưng',
+  '307': 'Chị Min',
+  '308': 'Bạn Tâm',
+  '309': 'Chị Vy',
+  '310': 'Chị Hương',
+  '311': 'Gia đình chị Thúy',
+  '312': 'Gia đình Chị Hiền',
 };
 
 function updateGuestName() {
