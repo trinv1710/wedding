@@ -138,7 +138,7 @@ const guestNames = {
   '137': 'Vợ chồng chị Trang',
   '138': 'Vợ chồng anh Liêm',
   '139': 'Vợ chồng chị Phương',
-  '140': 'Chị Tiên',
+  '140': 'Chị Thủy Tiên',
   '141': 'Vợ chồng anh Lộc',
   '142': 'Vợ chồng anh Trung Tiến',
   '143': 'Vợ chồng bạn Hoa',
