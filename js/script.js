@@ -157,7 +157,7 @@ const guestNames = {
   '156': 'Em Kiệt Trịnh',
   '157': 'Vợ chồng anh Nguyên',
   '158': 'Em Tuyết',
-  '159': 'Anh Hòa Tiến',
+  '159': 'Vợ chồng anh Hòa Tiến',
   '160': 'Em Hồng',
   '161': 'Vợ chồng anh Quý',
   '162': 'Em Ngân',
