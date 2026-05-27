@@ -14,8 +14,7 @@
 html,
 body {
   margin: 0;
-  overflow-x: clip;
-  overflow-y: hidden;
+  overflow: hidden;
   line-height: normal;
 }
 
