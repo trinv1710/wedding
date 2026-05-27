@@ -258,8 +258,18 @@ function updateGuestName() {
     }
   }
   if (isGroomSide(guest)) {
-    const dateEl = document.getElementById('splash-date-value');
-    if (dateEl) dateEl.textContent = '13 · 06 · 2026';
+    const splashDate = document.getElementById('splash-date-value');
+    if (splashDate) splashDate.textContent = '13 · 06 · 2026';
+    const heroFull = document.getElementById('hero-date-full');
+    if (heroFull) heroFull.textContent = '13.06.2026';
+    const mainDay = document.getElementById('main-date-day');
+    if (mainDay) mainDay.textContent = '13';
+    const heroDow = document.getElementById('hero-date-dow');
+    if (heroDow) heroDow.textContent = 'THỨ BẢY';
+    const mainDow = document.getElementById('main-date-dow');
+    if (mainDow) mainDow.textContent = 'THỨ BẢY';
+    document.getElementById('family-header')?.classList.add('flex-row-reverse');
+    document.getElementById('family-names')?.classList.add('flex-row-reverse');
   }
 }
 
