@@ -295,38 +295,30 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-// Gift box modal
-const giftBoxTrigger = document.querySelector('.gift-box-trigger');
-const giftBoxModal = document.querySelector('.gift-box-modal');
-const giftBoxClose = document.querySelector('.gift-box-close');
-const giftBoxCopy = document.querySelector('.gift-box-copy');
-
-function openGiftBox() {
-  if (!giftBoxModal) return;
-  giftBoxModal.classList.remove('hidden');
-  giftBoxModal.classList.add('flex');
-}
-
-function closeGiftBox() {
-  if (!giftBoxModal) return;
-  giftBoxModal.classList.add('hidden');
-  giftBoxModal.classList.remove('flex');
-}
-
-if (giftBoxTrigger) giftBoxTrigger.addEventListener('click', openGiftBox);
-if (giftBoxClose) giftBoxClose.addEventListener('click', closeGiftBox);
-if (giftBoxModal) {
-  giftBoxModal.addEventListener('click', (e) => {
-    if (e.target === giftBoxModal) closeGiftBox();
-  });
-}
-if (giftBoxCopy) {
-  giftBoxCopy.addEventListener('click', () => {
-    const account = giftBoxCopy.dataset.account || '';
+// Gift box — event delegation để hoạt động trên cả bride và groom block
+document.addEventListener('click', (e) => {
+  if (e.target.closest('.gift-box-trigger')) {
+    const modal = e.target.closest('.wedding-card')?.querySelector('.gift-box-modal');
+    if (modal) { modal.classList.remove('hidden'); modal.classList.add('flex'); }
+    return;
+  }
+  if (e.target.closest('.gift-box-close')) {
+    const modal = e.target.closest('.wedding-card')?.querySelector('.gift-box-modal');
+    if (modal) { modal.classList.add('hidden'); modal.classList.remove('flex'); }
+    return;
+  }
+  if (e.target.classList.contains('gift-box-modal')) {
+    e.target.classList.add('hidden');
+    e.target.classList.remove('flex');
+    return;
+  }
+  if (e.target.closest('.gift-box-copy')) {
+    const btn = e.target.closest('.gift-box-copy');
+    const account = btn.dataset.account || '';
     const done = () => {
-      const original = giftBoxCopy.textContent;
-      giftBoxCopy.textContent = 'Đã sao chép!';
-      setTimeout(() => { giftBoxCopy.textContent = original; }, 1500);
+      const original = btn.textContent;
+      btn.textContent = 'Đã sao chép!';
+      setTimeout(() => { btn.textContent = original; }, 1500);
     };
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(account).then(done).catch(done);
@@ -336,8 +328,8 @@ if (giftBoxCopy) {
       document.body.appendChild(ta);
       ta.select();
       try { document.execCommand('copy'); } catch (_) {}
-      document.body.removeChild(ta);
+      ta.remove();
       done();
     }
-  });
-}
+  }
+});
