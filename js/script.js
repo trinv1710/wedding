@@ -170,7 +170,7 @@ const guestNames = {
   '169': 'Vợ chồng bạn Phúc',
   '170': 'Vợ chồng bạn Trọng',
   '171': 'Vợ chồng bạn Hà',
-  '172': 'Bạn Long',
+  '172': 'Bạn Minh Long',
   '173': 'Bạn Sáng',
   '174': 'Bạn Linh',
   '175': 'Bạn Nghĩa',
