@@ -582,24 +582,43 @@ body {
 }
 
 .splash-dates {
+  position: relative;
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 18px;
-  margin-bottom: 22px;
+  gap: 14px;
+  margin: 0 20px 22px;
+  padding: 14px 0;
+  border-top: 1px solid rgba(99, 23, 23, 0.2);
+  border-bottom: 1px solid rgba(99, 23, 23, 0.2);
 }
 
+.splash-dates__ornament {
+  color: rgba(99, 23, 23, 0.45);
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.splash-dates__corner {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-color: rgba(99, 23, 23, 0.35);
+  border-style: solid;
+}
+
+.splash-dates__corner--tl { top: -1px; left: 0; border-width: 1px 0 0 1px; }
+.splash-dates__corner--tr { top: -1px; right: 0; border-width: 1px 1px 0 0; }
+.splash-dates__corner--bl { bottom: -1px; left: 0; border-width: 0 0 1px 1px; }
+.splash-dates__corner--br { bottom: -1px; right: 0; border-width: 0 1px 1px 0; }
+
 .splash-date {
-  flex: 1;
-  max-width: 150px;
-  padding: 10px 8px;
-  border: 1px solid rgba(99, 23, 23, 0.25);
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.55);
+  text-align: center;
 }
 
 .splash-date__label {
   font-family: 'Playfair Display', serif;
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #8a4a4a;
@@ -608,7 +627,7 @@ body {
 
 .splash-date__value {
   font-family: 'Playfair Display', serif;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   color: var(--color-primary);
 }
