@@ -246,7 +246,7 @@ function getGuestId() {
 
 function isGroomSide(guest) {
   const n = Number(guest);
-  return n >= 99 && n <= 217;
+  return n >= 99 && n <= 299;
 }
 
 function updateGuestName() {
