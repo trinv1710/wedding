@@ -270,30 +270,24 @@ window.addEventListener('hashchange', updateGuestName);
 
 // Countdown function
 function updateCountdown() {
-  const targetDate = new Date('2026-06-07T00:00:00').getTime();
+  const targetDate = new Date(isGroomSide(getGuestId()) ? '2026-06-13T00:00:00' : '2026-06-07T00:00:00').getTime();
   const now = new Date().getTime();
   const timeRemaining = targetDate - now;
 
+  const setText = (cls, val) => document.querySelectorAll(cls).forEach(el => { el.textContent = val; });
+
   if (timeRemaining <= 0) {
-    // Countdown finished
-    document.querySelector('.vs-time-days').textContent = '0';
-    document.querySelector('.vs-time-hours').textContent = '0';
-    document.querySelector('.vs-time-minutes').textContent = '0';
-    document.querySelector('.vs-time-seconds').textContent = '0';
+    setText('.vs-time-days', '0');
+    setText('.vs-time-hours', '0');
+    setText('.vs-time-minutes', '0');
+    setText('.vs-time-seconds', '0');
     return;
   }
 
-  // Calculate time units
-  const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-
-  // Update DOM
-  document.querySelector('.vs-time-days').textContent = days;
-  document.querySelector('.vs-time-hours').textContent = hours;
-  document.querySelector('.vs-time-minutes').textContent = minutes;
-  document.querySelector('.vs-time-seconds').textContent = seconds;
+  setText('.vs-time-days', Math.floor(timeRemaining / (1000 * 60 * 60 * 24)));
+  setText('.vs-time-hours', Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+  setText('.vs-time-minutes', Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60)));
+  setText('.vs-time-seconds', Math.floor((timeRemaining % (1000 * 60)) / 1000));
 }
 
 // Update countdown immediately and then every second
