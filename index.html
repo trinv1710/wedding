@@ -1445,16 +1445,32 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const triAudio = document.getElementById('triAudio');
       const splashScreen = document.getElementById('splashScreen');
-      const musicToggle = document.getElementById('musicToggle');
 
-      function setMusicState(playing) {
-        if (!musicToggle) return;
-        musicToggle.classList.toggle('is-playing', playing);
-        musicToggle.classList.toggle('is-paused', !playing);
-        musicToggle.setAttribute('aria-pressed', playing ? 'true' : 'false');
-      }
+      document.querySelectorAll('.wedding-app').forEach(function (app) {
+        const audio = app.querySelector('audio');
+        const toggle = app.querySelector('.music-toggle');
+        if (!audio || !toggle) return;
+
+        function setState(playing) {
+          toggle.classList.toggle('is-playing', playing);
+          toggle.classList.toggle('is-paused', !playing);
+          toggle.setAttribute('aria-pressed', playing ? 'true' : 'false');
+        }
+
+        audio.addEventListener('play', function () { setState(true); });
+        audio.addEventListener('pause', function () { setState(false); });
+        audio.addEventListener('ended', function () { setState(false); });
+
+        toggle.addEventListener('click', function (e) {
+          e.stopPropagation();
+          if (audio.paused) {
+            audio.play().catch(function () {});
+          } else {
+            audio.pause();
+          }
+        });
+      });
 
       splashScreen.addEventListener('click', function () {
         splashScreen.classList.add('splash-hide');
@@ -1462,25 +1478,15 @@
           splashScreen.style.display = 'none';
         }, 800);
 
-        if (musicToggle) musicToggle.classList.add('is-visible');
+        const activeApp = document.querySelector('.wedding-app:not(.hidden)');
+        if (!activeApp) return;
 
-        triAudio.play().catch(function () {});
+        const toggle = activeApp.querySelector('.music-toggle');
+        if (toggle) toggle.classList.add('is-visible');
+
+        const audio = activeApp.querySelector('audio');
+        if (audio) audio.play().catch(function () {});
       });
-
-      triAudio.addEventListener('play', function () { setMusicState(true); });
-      triAudio.addEventListener('pause', function () { setMusicState(false); });
-      triAudio.addEventListener('ended', function () { setMusicState(false); });
-
-      if (musicToggle) {
-        musicToggle.addEventListener('click', function (e) {
-          e.stopPropagation();
-          if (triAudio.paused) {
-            triAudio.play().catch(function () {});
-          } else {
-            triAudio.pause();
-          }
-        });
-      }
     });
   </script>
   <script src="js/script.js?v=202605280121"></script>
