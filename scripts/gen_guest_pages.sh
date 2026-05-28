@@ -32,6 +32,8 @@ guest_ids = sorted(
 )
 
 for guest_id in guest_ids:
+    if 99 <= int(guest_id) <= 299:
+        continue  # nhà trai: ./scripts/gen_groom_guest_pages.sh
     guest_url = f"{site_base}/guest/{guest_id}/"
     html = index_html
     html = html.replace(
@@ -46,6 +48,7 @@ for guest_id in guest_ids:
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "index.html").write_text(html, encoding="utf-8")
 
-print(f"✓ Generated {len(guest_ids)} pages under guest/N/index.html")
+bride_count = sum(1 for g in guest_ids if not (99 <= int(g) <= 299))
+print(f"✓ Generated {bride_count} bride pages (skipped 99–299 → gen_groom_guest_pages.sh)")
 print(f"  Example: {site_base}/guest/1/")
 PY
