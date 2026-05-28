@@ -230,7 +230,7 @@ const guestNames = {
   '310': 'Chị Hương',
   '311': 'Gia đình chị Thúy',
   '312': 'Gia đình Chị Hiền',
-  '313': 'chị Chi',
+  '313': 'Gia đình chị Chi',
 };
 
 function getGuestId() {
