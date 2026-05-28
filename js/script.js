@@ -236,6 +236,7 @@ const guestNames = {
   '312': 'Gia đình Chị Hiền',
   '313': 'Gia đình chị Chi',
   '314': 'Bạn Bích Ngân +',
+  '315': 'Bé Linh',
 };
 
 function getGuestId() {
