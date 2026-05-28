@@ -218,6 +218,7 @@ const guestNames = {
   '217': 'Em Kiên',
   '221': 'Vợ chồng bạn Trâm',
   '222': 'Vợ chồng bạn Hiện',
+  '223': 'Bạn Tường',
   '300': 'Vợ chồng anh Hùng AM',
   '301': 'Bạn Đức Anh',
   '302': 'Bạn Khả Vi',
@@ -232,6 +233,7 @@ const guestNames = {
   '311': 'Gia đình chị Thúy',
   '312': 'Gia đình Chị Hiền',
   '313': 'Gia đình chị Chi',
+  '314': 'Bạn Bích Ngân +',
 };
 
 function getGuestId() {
