@@ -247,6 +247,7 @@ function getGuestId() {
 }
 
 function isGroomSide(guest) {
+  if (document.body.dataset.event === 'groom') return true;
   const n = Number(guest);
   return n >= 99 && n <= 299;
 }
