@@ -39,8 +39,8 @@
   <meta property="og:url" content="https://trinv1710.github.io/wedding/guest/185/">
   <meta property="og:title" content="Văn Trí ❤ Mỹ Lê — Save the Date 07.06.2026">
   <meta property="og:description" content="Trân trọng kính mời quý khách đến dự buổi tiệc chung vui cùng gia đình chúng tôi">
-  <meta property="og:image" content="https://trinv1710.github.io/wedding/resources/images/image-share-social.jpg?ogv=202605272351">
-  <meta property="og:image:secure_url" content="https://trinv1710.github.io/wedding/resources/images/image-share-social.jpg?ogv=202605272351">
+  <meta property="og:image" content="https://trinv1710.github.io/wedding/resources/images/image-share-social.jpg?ogv=202605280944">
+  <meta property="og:image:secure_url" content="https://trinv1710.github.io/wedding/resources/images/image-share-social.jpg?ogv=202605280944">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -50,16 +50,16 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Văn Trí ❤ Mỹ Lê — Save the Date 07.06.2026">
   <meta name="twitter:description" content="Trân trọng kính mời quý khách đến dự buổi tiệc chung vui cùng gia đình chúng tôi">
-  <meta name="twitter:image" content="https://trinv1710.github.io/wedding/resources/images/image-share-social.jpg?ogv=202605272351">
+  <meta name="twitter:image" content="https://trinv1710.github.io/wedding/resources/images/image-share-social.jpg?ogv=202605280944">
   <meta name="twitter:image:alt" content="Ảnh cưới Văn Trí & Mỹ Lê">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=202605272351">
-  <link rel="stylesheet" href="css/animations.css?v=202605272351">
-  <link rel="stylesheet" href="css/dynamic-calendar.css?v=202605272351">
+  <link rel="stylesheet" href="css/style.css?v=202605280944">
+  <link rel="stylesheet" href="css/animations.css?v=202605280944">
+  <link rel="stylesheet" href="css/dynamic-calendar.css?v=202605280944">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
 </head>
@@ -1360,18 +1360,18 @@
           <p class="text-center text-gray-600 text-sm mb-6">Quét QR code để gửi yêu thương trực tiếp tới:</p>
 
           <div class="border border-rose-200 rounded-xl p-4 mb-5">
-            <div class="text-center font-great-vibes text-primary text-3xl mb-3">Cô dâu</div>
+            <div class="text-center font-great-vibes text-primary text-3xl mb-3">Chú rể</div>
             <div class="mx-auto w-44 h-44 mb-4 border-2 border-primary p-2 rounded-lg bg-white">
-              <img src="resources/images/qr-bride.jpeg" alt="QR Cô dâu"
+              <img src="resources/images/qr-groom.jpg" alt="QR Chú rể"
                 class="flex items-center justify-center w-full h-full object-contain qr-image">
             </div>
             <div class="text-center">
-              <div class="font-semibold text-gray-900">LE THI MY LE</div>
-              <div class="text-sm text-gray-600 mb-1">Agribank</div>
-              <div class="text-base text-gray-800 mb-3 tracking-wider">4704205476319</div>
+              <div class="font-semibold text-gray-900">NGUYEN VAN TRI</div>
+              <div class="text-sm text-gray-600 mb-1">Vietcombank</div>
+              <div class="text-base text-gray-800 mb-3 tracking-wider">1065014903</div>
               <button type="button"
                 class="gift-box-copy inline-block bg-rose-100 hover:bg-rose-200 text-primary text-sm font-medium px-4 py-2 rounded-full transition-colors"
-                data-account="4704205476319">
+                data-account="1065014903">
                 Sao chép số TK
               </button>
             </div>
@@ -1446,16 +1446,32 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const triAudio = document.getElementById('triAudio');
       const splashScreen = document.getElementById('splashScreen');
-      const musicToggle = document.getElementById('musicToggle');
 
-      function setMusicState(playing) {
-        if (!musicToggle) return;
-        musicToggle.classList.toggle('is-playing', playing);
-        musicToggle.classList.toggle('is-paused', !playing);
-        musicToggle.setAttribute('aria-pressed', playing ? 'true' : 'false');
-      }
+      document.querySelectorAll('.wedding-app').forEach(function (app) {
+        const audio = app.querySelector('audio');
+        const toggle = app.querySelector('.music-toggle');
+        if (!audio || !toggle) return;
+
+        function setState(playing) {
+          toggle.classList.toggle('is-playing', playing);
+          toggle.classList.toggle('is-paused', !playing);
+          toggle.setAttribute('aria-pressed', playing ? 'true' : 'false');
+        }
+
+        audio.addEventListener('play', function () { setState(true); });
+        audio.addEventListener('pause', function () { setState(false); });
+        audio.addEventListener('ended', function () { setState(false); });
+
+        toggle.addEventListener('click', function (e) {
+          e.stopPropagation();
+          if (audio.paused) {
+            audio.play().catch(function () {});
+          } else {
+            audio.pause();
+          }
+        });
+      });
 
       splashScreen.addEventListener('click', function () {
         splashScreen.classList.add('splash-hide');
@@ -1463,29 +1479,19 @@
           splashScreen.style.display = 'none';
         }, 800);
 
-        if (musicToggle) musicToggle.classList.add('is-visible');
+        const activeApp = document.querySelector('.wedding-app:not(.hidden)');
+        if (!activeApp) return;
 
-        triAudio.play().catch(function () {});
+        const toggle = activeApp.querySelector('.music-toggle');
+        if (toggle) toggle.classList.add('is-visible');
+
+        const audio = activeApp.querySelector('audio');
+        if (audio) audio.play().catch(function () {});
       });
-
-      triAudio.addEventListener('play', function () { setMusicState(true); });
-      triAudio.addEventListener('pause', function () { setMusicState(false); });
-      triAudio.addEventListener('ended', function () { setMusicState(false); });
-
-      if (musicToggle) {
-        musicToggle.addEventListener('click', function (e) {
-          e.stopPropagation();
-          if (triAudio.paused) {
-            triAudio.play().catch(function () {});
-          } else {
-            triAudio.pause();
-          }
-        });
-      }
     });
   </script>
-  <script src="js/script.js?v=202605272351"></script>
-  <script src="js/animations.js?v=202605272351"></script>
+  <script src="js/script.js?v=202605280944"></script>
+  <script src="js/animations.js?v=202605280944"></script>
 </body>
 
 </html>
