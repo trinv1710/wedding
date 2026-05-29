@@ -215,7 +215,7 @@ const guestNames = {
   '214': 'Chị Dưỡng',
   '215': 'Chị Phương Nam (Cọ)',
   '216': 'Vợ chồng chú Cường',
-  '217': 'Em Kiên',
+  '217': 'Em Kiên +',
   '221': 'Vợ chồng bạn Trâm',
   '222': 'Vợ chồng bạn Hiện',
   '223': 'Bạn Tường +',
@@ -254,8 +254,11 @@ function getGuestId() {
   return new URLSearchParams(hash).get('guest');
 }
 
+const BRIDE_SIDE_OVERRIDES = new Set(['217']);
+
 function isGroomSide(guest) {
   if (document.body.dataset.event === 'groom') return true;
+  if (BRIDE_SIDE_OVERRIDES.has(String(guest))) return false;
   const n = Number(guest);
   return n >= 99 && n <= 299;
 }

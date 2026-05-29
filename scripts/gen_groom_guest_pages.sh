@@ -11,6 +11,8 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 export ROOT
 export GROOM_FROM="${GROOM_FROM:-99}"
 export GROOM_TO="${GROOM_TO:-299}"
+# Các id nằm trong range nhà trai nhưng thực tế là nhà gái (đồng bộ với BRIDE_SIDE_OVERRIDES trong js/script.js).
+export BRIDE_SIDE_OVERRIDES="${BRIDE_SIDE_OVERRIDES:-217}"
 
 python3 <<'PY'
 import os
@@ -20,6 +22,7 @@ from pathlib import Path
 root = Path(os.environ["ROOT"])
 groom_from = int(os.environ["GROOM_FROM"])
 groom_to = int(os.environ["GROOM_TO"])
+bride_overrides = {s.strip() for s in os.environ.get("BRIDE_SIDE_OVERRIDES", "").split(",") if s.strip()}
 site_base = "https://trinv1710.github.io/wedding"
 base_href = f"{site_base}/"
 
@@ -47,6 +50,8 @@ groom_canonical = f"{site_base}/groom.html"
 count = 0
 for n in range(groom_from, groom_to + 1):
     guest_id = str(n)
+    if guest_id in bride_overrides:
+        continue
     guest_url = f"{site_base}/guest/{guest_id}/"
     html = template
     html = html.replace(

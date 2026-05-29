@@ -6,6 +6,8 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 export ROOT
+# Các id nằm trong range nhà trai nhưng thực tế là nhà gái (đồng bộ với BRIDE_SIDE_OVERRIDES trong js/script.js).
+export BRIDE_SIDE_OVERRIDES="${BRIDE_SIDE_OVERRIDES:-217}"
 
 python3 <<'PY'
 import os
@@ -17,6 +19,7 @@ index_path = root / "index.html"
 script_path = root / "js" / "script.js"
 site_base = "https://trinv1710.github.io/wedding"
 base_href = f"{site_base}/"
+bride_overrides = {s.strip() for s in os.environ.get("BRIDE_SIDE_OVERRIDES", "").split(",") if s.strip()}
 
 index_html = index_path.read_text(encoding="utf-8")
 if "<base " not in index_html:
@@ -32,7 +35,7 @@ guest_ids = sorted(
 )
 
 for guest_id in guest_ids:
-    if 99 <= int(guest_id) <= 299:
+    if 99 <= int(guest_id) <= 299 and guest_id not in bride_overrides:
         continue  # nhà trai: ./scripts/gen_groom_guest_pages.sh
     guest_url = f"{site_base}/guest/{guest_id}/"
     html = index_html
@@ -48,7 +51,7 @@ for guest_id in guest_ids:
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "index.html").write_text(html, encoding="utf-8")
 
-bride_count = sum(1 for g in guest_ids if not (99 <= int(g) <= 299))
-print(f"✓ Generated {bride_count} bride pages (skipped 99–299 → gen_groom_guest_pages.sh)")
+bride_count = sum(1 for g in guest_ids if not (99 <= int(g) <= 299) or g in bride_overrides)
+print(f"✓ Generated {bride_count} bride pages (skipped 99–299 → gen_groom_guest_pages.sh; overrides: {sorted(bride_overrides) or 'none'})")
 print(f"  Example: {site_base}/guest/1/")
 PY
