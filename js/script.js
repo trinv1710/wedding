@@ -224,7 +224,7 @@ const guestNames = {
   '226': 'Vợ chồng bạn My',
   '227': 'Bạn Mỹ Linh +',
   '300': 'Vợ chồng anh Hùng AM',
-  '301': 'Bạn Đức Anh',
+  '301': 'Bạn Đức Anh +',
   '302': 'Bạn Khả Vi',
   '303': 'Bạn Linh',
   '304': 'Bạn Hiếu',
