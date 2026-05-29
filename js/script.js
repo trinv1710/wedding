@@ -16,7 +16,7 @@ const guestNames = {
   '15': 'Bạn Như Quỳnh',
   '16': 'Bạn Thảo Quỳnh',
   '17': 'Bạn Ái My',
-  '18': 'Bạn Tiến',
+  '18': 'Bạn Tiến +',
   '19': 'Bạn Tài',
   '20': 'Bạn Thúy Vy + Thanh Dương',
   '21': 'Bạn Công',
