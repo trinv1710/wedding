@@ -111,7 +111,7 @@ const guestNames = {
   '110': 'Bác Sơn',
   '111': 'Vợ chồng anh Duy',
   '112': 'Vợ chồng anh Minh Tiến',
-  '113': 'Bạn Trang +',
+  '113': 'Bạn Trang + anh Hoàng Anh',
   '114': 'Vợ chồng anh Đức',
   '115': 'Vợ chồng anh Vũ',
   '116': 'Vợ chồng anh Thiên',
